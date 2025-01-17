@@ -1,0 +1,13 @@
+[project]
+name = "pokedex"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.6",
+    "pydantic>=2.10.3",
+    "pytest>=8.3.4",
+]
+[tool.mypy]
+namespace_packages = true
