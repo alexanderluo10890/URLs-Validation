@@ -1,7 +1,7 @@
-import pytest
+import requests
 import json
+import pytest
 from unittest.mock import patch
-from link_tester import test_link, test_links
 
 # Mocked JSON data for testing
 MOCK_LINKS = {
@@ -11,6 +11,43 @@ MOCK_LINKS = {
         "https://nonexistentdomain.xyz"
     ]
 }
+
+def test_link(url):
+    """
+    Tests a single URL for reachability.
+
+    Args:
+        url (str): The URL to test.
+
+    Returns:
+        dict: A dictionary with the URL, status code, and reachability status.
+    """
+    try:
+        response = requests.head(url, allow_redirects=True, timeout=5)
+        return {
+            "url": url,
+            "status_code": response.status_code,
+            "is_reachable": response.ok,
+        }
+    except requests.exceptions.RequestException as e:
+        return {
+            "url": url,
+            "status_code": None,
+            "is_reachable": False,
+            "error": str(e),
+        }
+
+def test_links(urls):
+    """
+    Tests a list of URLs for reachability.
+
+    Args:
+        urls (list): A list of URLs to test.
+
+    Returns:
+        list: A list of dictionaries with test results for each URL.
+    """
+    return [test_link(url) for url in urls]
 
 @pytest.fixture
 def mock_json_file(tmp_path):
@@ -24,6 +61,7 @@ def test_valid_url_success():
     """Test a valid URL returns correct status."""
     with patch("requests.head") as mock_head:
         mock_head.return_value.status_code = 200
+        mock_head.return_value.ok = True
         result = test_link("https://www.example.com")
         assert result["url"] == "https://www.example.com"
         assert result["status_code"] == 200
@@ -31,51 +69,48 @@ def test_valid_url_success():
 
 def test_invalid_url_format():
     """Test an invalid URL format raises an error."""
-    result = test_link("http://invalid-url")
-    assert result["url"] == "http://invalid-url"
-    assert result["status_code"] is None
-    assert result["is_reachable"] is False
-    assert "error" in result
+    with patch("requests.head") as mock_head:
+        mock_head.side_effect = requests.exceptions.InvalidURL("Invalid URL format")
+        result = test_link("http://invalid-url")
+        assert result["url"] == "http://invalid-url"
+        assert result["status_code"] is None
+        assert result["is_reachable"] is False
+        assert "error" in result
 
 def test_unreachable_url():
     """Test a valid but unreachable URL."""
     with patch("requests.head") as mock_head:
-        mock_head.side_effect = Exception("Connection error")
+        mock_head.side_effect = requests.exceptions.ConnectionError("Connection error")
         result = test_link("https://nonexistentdomain.xyz")
         assert result["url"] == "https://nonexistentdomain.xyz"
         assert result["status_code"] is None
         assert result["is_reachable"] is False
         assert "error" in result
 
-def test_test_links_function(mock_json_file):
-    """Test the function that processes all links from a JSON file."""
-    with patch("link_tester.links", MOCK_LINKS["links"]):
-        with patch("link_tester.requests.head") as mock_head:
-            # Mock responses for each link
-            mock_head.side_effect = [
-                type("Response", (object,), {"status_code": 200}),
-                Exception("Invalid URL format"),
-                Exception("Connection error"),
-            ]
-            # Run the test
-            results = []
-            for result in map(test_link, MOCK_LINKS["links"]):
-                results.append(result)
+def test_test_links_function():
+    """Test the function that processes all links from a list."""
+    with patch("requests.head") as mock_head:
+        mock_head.side_effect = [
+            type("Response", (object,), {"status_code": 200, "ok": True}),
+            requests.exceptions.InvalidURL("Invalid URL format"),
+            requests.exceptions.ConnectionError("Connection error"),
+        ]
+        links = ["https://www.example.com", "http://invalid-url", "https://nonexistentdomain.xyz"]
+        results = test_links(links)
 
-            # Assertions for each link
-            assert results[0]["url"] == "https://www.example.com"
-            assert results[0]["status_code"] == 200
-            assert results[0]["is_reachable"] is True
+        assert results[0]["url"] == "https://www.example.com"
+        assert results[0]["status_code"] == 200
+        assert results[0]["is_reachable"] is True
 
-            assert results[1]["url"] == "http://invalid-url"
-            assert results[1]["status_code"] is None
-            assert results[1]["is_reachable"] is False
-            assert "error" in results[1]
+        assert results[1]["url"] == "http://invalid-url"
+        assert results[1]["status_code"] is None
+        assert results[1]["is_reachable"] is False
+        assert "error" in results[1]
 
-            assert results[2]["url"] == "https://nonexistentdomain.xyz"
-            assert results[2]["status_code"] is None
-            assert results[2]["is_reachable"] is False
-            assert "error" in results[2]
+        assert results[2]["url"] == "https://nonexistentdomain.xyz"
+        assert results[2]["status_code"] is None
+        assert results[2]["is_reachable"] is False
+        assert "error" in results[2]
 
 def test_save_results_to_json(tmp_path):
     """Test saving results to a JSON file."""

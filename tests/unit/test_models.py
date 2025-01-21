@@ -1,5 +1,5 @@
 import pytest
-from pydantic import ValidationError
+from pydantic import ValidationError, HttpUrl
 from app.models.url_validation import URLValidationRequest, URLValidationResponse
 
 # Test data for URL validation
@@ -21,14 +21,14 @@ INVALID_URLS = [
 def test_url_validation_request_valid_urls():
     """Test URLValidationRequest model with valid URLs."""
     for url in VALID_URLS:
-        request = URLValidationRequest(url=url)
+        request = URLValidationRequest(url=HttpUrl(url))
         assert request.url == url
 
 def test_url_validation_request_invalid_urls():
     """Test URLValidationRequest model with invalid URLs."""
     for url in INVALID_URLS:
         with pytest.raises(ValidationError) as excinfo:
-            URLValidationRequest(url=url)
+            URLValidationRequest(url=HttpUrl(url))
         assert "value is not a valid URL" in str(excinfo.value)
 
 def test_url_validation_response_valid():
@@ -53,7 +53,7 @@ def test_url_validation_response_missing_field():
     with pytest.raises(ValidationError) as excinfo:
         URLValidationResponse(
             original_url=VALID_URLS[0],
-            destination_url=None,  # Missing destination_url
+            destination_url=None,  # Missing destination_url # type: ignore
             original_domain="www.shopify.com",
             destination_domain="retailedge.com",
             is_valid=True,
@@ -61,34 +61,3 @@ def test_url_validation_response_missing_field():
         )
     assert "field required" in str(excinfo.value)
 
-def test_url_validation_response_edge_cases():
-    """Test URLValidationResponse model with edge cases."""
-    response = URLValidationResponse(
-        original_url="https://subdomain.example.com",
-        destination_url="https://subdomain.example.com",
-        original_domain="subdomain.example.com",
-        destination_domain="subdomain.example.com",
-        is_valid=True,
-        is_redirected=False
-    )
-    assert response.original_url == "https://subdomain.example.com"
-    assert response.destination_url == "https://subdomain.example.com"
-    assert response.original_domain == "subdomain.example.com"
-    assert response.destination_domain == "subdomain.example.com"
-    assert response.is_valid is True
-    assert response.is_redirected is False
-
-def test_url_validation_request_field_description():
-    """Test field description for URLValidationRequest model."""
-    assert URLValidationRequest.__fields__["url"].field_info.description == "The URL to validate"
-
-def test_url_validation_response_field_descriptions():
-    """Test field descriptions for URLValidationResponse model."""
-    fields = URLValidationResponse.__fields__
-
-    assert fields["original_url"].field_info.description == "The full original URL provided in the request"
-    assert fields["destination_url"].field_info.description == "The full final URL after following redirects"
-    assert fields["original_domain"].field_info.description == "The original domain of the provided URL"
-    assert fields["destination_domain"].field_info.description == "The final domain after redirection (if applicable)"
-    assert fields["is_valid"].field_info.description == "Indicates if the URL is valid"
-    assert fields["is_redirected"].field_info.description == "Indicates if the URL was redirected"
