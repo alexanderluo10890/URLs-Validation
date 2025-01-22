@@ -14,6 +14,7 @@ def load_links(json_file: str) -> List[str]:
     try:
         with open(json_file, "r") as file:
             data = json.load(file)
+            print(data)
             return data.get("links", [])
     except FileNotFoundError:
         print(f"Error: File '{json_file}' not found.")
