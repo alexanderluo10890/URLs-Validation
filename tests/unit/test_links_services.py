@@ -78,7 +78,8 @@ def test_all_links_url():
     """Test the is_valid_url function with edge cases."""
     links_url = load_links('../link.json')
     print(links_url)
-    for url in links_url:
+    for url in links_url[0:]:
         is_valid, message = is_valid_url(url)
         assert is_valid is True
         assert message == "Valid URL"
+        check_redirection(url)

@@ -34,7 +34,7 @@ def check_redirection(url: str):
     """
     Checks whether the given URL redirects to another domain.
     Returns the original domain, destination domain, and a boolean indicating if redirection occurred.
-    
+
     Parameters:
         url (str): The URL to check for redirection.
 
@@ -44,16 +44,32 @@ def check_redirection(url: str):
         is_redirected (bool): Whether the URL was redirected to another domain.
     """
     try:
-        # Send a GET request to follow redirects (timeout set for better error handling)
-        response = requests.get(url, allow_redirects=True, timeout=10)
-        
-        # Extract domains using urlparse
+        redirect_count = 0
+        max_redirects = 4
         original_domain = urlparse(url).netloc
-        destination_domain = urlparse(response.url).netloc
-        
+        while redirect_count < max_redirects:
+            response = requests.get(url, allow_redirects=False, timeout=10)
+            status_code = response.status_code
+
+            # Check for redirection status codes
+            if status_code in [301, 302, 307, 308]:
+                redirect_count += 1
+                url = response.headers.get("Location") # type: ignore
+                if not url:
+                    raise HTTPException(status_code=400, detail="Redirection URL is missing.")
+            else:
+                break
+
+        # If maximum redirects are reached, raise an error
+        if redirect_count == max_redirects:
+            raise HTTPException(status_code=400, detail="Too many redirects. The link is not valid.")
+
+        # Extract domains using urlparse
+        destination_domain = urlparse(response.url).netloc # type: ignore
+
         # Check if redirection occurred
         is_redirected = original_domain != destination_domain
-        
+
         return original_domain, destination_domain, is_redirected
 
     except requests.exceptions.Timeout:
@@ -62,6 +78,7 @@ def check_redirection(url: str):
         raise HTTPException(status_code=400, detail="Failed to connect to the URL. Check if the URL is reachable.")
     except requests.exceptions.RequestException as e:
         raise HTTPException(status_code=400, detail=f"Error reaching the URL: {str(e)}")
+
 
     
     # def is_valid_url(url):
