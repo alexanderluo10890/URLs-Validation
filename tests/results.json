@@ -1,0 +1,3635 @@
+[
+    {
+        "url": "https://retailedge.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://retailedge.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://ivend.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://ivend.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.shopify.com/retail/retail-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.shopify.com/retail/retail-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.priority-software.com/retail-management/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.priority-software.com/retail-management/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.retailpro.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.retailpro.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.leafio.ai/solution-for-diy-stores/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.leafio.ai/solution-for-diy-stores/",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.softwareadvice.com/retail/retail-management-comparison/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.softwareadvice.com/retail/retail-management-comparison/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.lsretail.com/products/ls-central-for-retail",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.lsretail.com/products/ls-central-for-retail",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.lightspeedhq.com/pos/retail/inventory-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.lightspeedhq.com/pos/retail/inventory-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.ntsretail.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ntsretail.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.goodfirms.co/retail-management-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.goodfirms.co/retail-management-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://locsoftware.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://locsoftware.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://horizonretailsolutions.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://horizonretailsolutions.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.fusionretailsoftware.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.fusionretailsoftware.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.sage.com/en-us/industry/retail/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.sage.com/en-us/industry/retail/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.priority-software.com/retail-management/furniture-home-decor/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.priority-software.com/retail-management/furniture-home-decor/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://jetbase.io/industries/retail-software-development-services",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://jetbase.io/industries/retail-software-development-services",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://alexandriacomputers.com/home-improvement-store-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://alexandriacomputers.com/home-improvement-store-software/",
+            "status_code": 406,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://asana.com/industry/retail",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://asana.com/industry/retail",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.g2.com/categories/retail-management-software",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.g2.com/categories/retail-management-software",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.archretail.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.archretail.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://multidev.com/blog/home-decor-retail-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://multidev.com/blog/home-decor-retail-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.gofrugal.com/retail/store-management-software.html",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.gofrugal.com/retail/store-management-software.html",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.zoho.com/inventory/inventory-software-for-retail/",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.zoho.com/inventory/inventory-software-for-retail/",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.nextar.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.nextar.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://taqtics.co/easy-to-use-store-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://taqtics.co/easy-to-use-store-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://taqtics.co/easy-to-use-store-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://taqtics.co/easy-to-use-store-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://tagrain.com/home-decor-and-furniture-store-pos/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://tagrain.com/home-decor-and-furniture-store-pos/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://chaindrive.com/markets/home-decor-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://chaindrive.com/markets/home-decor-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "http://www.smartbuysell.co.ke/products/main-one-retail-management-point-of-sale-software-for-retailers",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "http://www.smartbuysell.co.ke/products/main-one-retail-management-point-of-sale-software-for-retailers",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.netsuite.com/portal/industries/retail.shtml",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.netsuite.com/portal/industries/retail.shtml",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.retaildirections.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.retaildirections.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.bluelinkerp.com/retail-furniture-appliance-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.bluelinkerp.com/retail-furniture-appliance-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://multidev.com/blog/5-management-tools-for-home-decor-retailers/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://multidev.com/blog/5-management-tools-for-home-decor-retailers/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.nomosone.com/industries/retail/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.nomosone.com/industries/retail/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.jestais.com/retail-management-suite/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.jestais.com/retail-management-suite/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.windwardsoftware.com/en-us/business-types/home-goods",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.windwardsoftware.com/en-us/business-types/home-goods",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.futura4retail.co.uk/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.futura4retail.co.uk/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://opusretailsolutions.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://opusretailsolutions.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://soft4realestate.com/irasas/retail-property-management-software-and-other-must-have-tools-for-your-business/",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://soft4realestate.com/irasas/retail-property-management-software-and-other-must-have-tools-for-your-business/",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://mysignature.io/blog/retail-management-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://mysignature.io/blog/retail-management-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.celerant.com/blog/how-to-find-the-right-retail-software-for-multi-store-chain/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.celerant.com/blog/how-to-find-the-right-retail-software-for-multi-store-chain/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://squashapps.com/blog/retail-management-software-design-idea-benefits-features/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://squashapps.com/blog/retail-management-software-design-idea-benefits-features/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.thebusinessresearchcompany.com/report/retail-management-software-global-market-report",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.thebusinessresearchcompany.com/report/retail-management-software-global-market-report",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.planradar.com/gb/retail-management-software-you-should-be-using/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.planradar.com/gb/retail-management-software-you-should-be-using/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.ntsretail.com/channel-management",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ntsretail.com/channel-management",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.intelligencenode.com/blog/quick-easy-guide-retail-management-systems/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.intelligencenode.com/blog/quick-easy-guide-retail-management-systems/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://chaindrive.com/tag/furniture-store-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://chaindrive.com/tag/furniture-store-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.gartner.com/en/digital-markets/insights/stand-out-in-your-category-with-retail-managment-buyer-insights",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.gartner.com/en/digital-markets/insights/stand-out-in-your-category-with-retail-managment-buyer-insights",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.archretail.com/services/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.archretail.com/services/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.centricsoftware.com/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.centricsoftware.com/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.getapp.com/retail-consumer-services-software/retail-management/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.getapp.com/retail-consumer-services-software/retail-management/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.smartbusinessdaily.com/retail-management-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.smartbusinessdaily.com/retail-management-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.quickbase.com/solutions/retail",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.quickbase.com/solutions/retail",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.techrepublic.com/article/retail-project-management-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.techrepublic.com/article/retail-project-management-software/",
+            "status_code": 406,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.relexsolutions.com/solutions/retail-floor-planning-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.relexsolutions.com/solutions/retail-floor-planning-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.lightspeedhq.com/pos/retail/inventory-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.lightspeedhq.com/pos/retail/inventory-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.smartsheet.com/retail-management-system-software?srsltid=AfmBOorW_gqcKdZ0T_Wa5PMB8KZPggFHM14w4t5_OWTEplKO5x8Aauo0",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.smartsheet.com/retail-management-system-software?srsltid=AfmBOorW_gqcKdZ0T_Wa5PMB8KZPggFHM14w4t5_OWTEplKO5x8Aauo0",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.ivaninfotech.com/steps-to-build-retail-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ivaninfotech.com/steps-to-build-retail-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.workzone.com/industries/retail-project-management/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.workzone.com/industries/retail-project-management/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.hashmicro.com/blog/quick-and-easy-guide-to-retail-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.hashmicro.com/blog/quick-and-easy-guide-to-retail-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://eleks.com/industries/retail-software-development/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://eleks.com/industries/retail-software-development/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://megateklb.com/LsRetail",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://megateklb.com/LsRetail",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://multishoring.com/software-development-for-retail/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://multishoring.com/software-development-for-retail/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://psr.com.eg/en/home-appliances-solutions/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://psr.com.eg/en/home-appliances-solutions/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://safetyculture.com/app/retail-erp-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://safetyculture.com/app/retail-erp-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://omegapos.com/blogs/types-of-pos-software-for-retail-businesses/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://omegapos.com/blogs/types-of-pos-software-for-retail-businesses/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.flooid.com/uk/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.flooid.com/uk/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.storesace.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.storesace.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://beatroute.io/blog/best-retail-management-software/",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://beatroute.io/blog/best-retail-management-software/",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.ncrvoyix.com/retail/edge?srsltid=AfmBOop9Q7PhrEoL-N8Dfp184yINcHYq3_LdgkRIPjy0ZNZY87EOlqwt",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ncrvoyix.com/retail/edge?srsltid=AfmBOop9Q7PhrEoL-N8Dfp184yINcHYq3_LdgkRIPjy0ZNZY87EOlqwt",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://risservices.ae/retail-pro-pos-retail-management-for-specialty-retail/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://risservices.ae/retail-pro-pos-retail-management-for-specialty-retail/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.topdevelopers.co/blog/retail-industry-software-solutions/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.topdevelopers.co/blog/retail-industry-software-solutions/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://arirms.com/what-is-retail-shop-management-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://arirms.com/what-is-retail-shop-management-software",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.brightpearl.com/retail-management-system-software",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.brightpearl.com/retail-management-system-software",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.hanaretail.com/pos-retail-home-decor-and-furniture-store",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.hanaretail.com/pos-retail-home-decor-and-furniture-store",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.reddit.com/r/HomeDepot/comments/1fyn8pr/home_depot_software_devs_to_start_having_to_spend/",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.reddit.com/r/HomeDepot/comments/1fyn8pr/home_depot_software_devs_to_start_having_to_spend/",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://posbytz.com/retail/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://posbytz.com/retail/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://stratafolio.com/5-essential-features-of-retail-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://stratafolio.com/5-essential-features-of-retail-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.quora.com/What-software-is-used-in-retail-stores",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.quora.com/What-software-is-used-in-retail-stores",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://retailcs.com/en/home",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://retailcs.com/en/home",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://erply.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://erply.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.repsly.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.repsly.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.gocretail.com/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.gocretail.com/",
+            "status_code": null,
+            "is_redirected": false,
+            "is_valid": false,
+            "error": "HTTPSConnectionPool(host='www.gocretail.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x000001846B8BE5D0>: Failed to resolve 'www.gocretail.com' ([Errno 11001] getaddrinfo failed)\"))"
+        }
+    },
+    {
+        "url": "https://www.swanretail.co.uk/department-stores/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.swanretail.co.uk/department-stores/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.clickmaint.com/industry-solutions/cmms-software-for-retail-maintenance",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.clickmaint.com/industry-solutions/cmms-software-for-retail-maintenance",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.yardi.com/products/retail-manager/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.yardi.com/products/retail-manager/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.towersystems.com.au/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.towersystems.com.au/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://d3.harvard.edu/platform-rctom/submission/using-software-tools-to-remodel-home-depots-supply-chain/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://d3.harvard.edu/platform-rctom/submission/using-software-tools-to-remodel-home-depots-supply-chain/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.cegid.com/global/products/cegid-retail-store-excellence/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.cegid.com/global/products/cegid-retail-store-excellence/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://sekel.tech/blog/best-retail-store-management-software-and-platform",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://sekel.tech/blog/best-retail-store-management-software-and-platform",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.linkedin.com/advice/1/youre-looking-retail-management-software-how-do-mbkqf",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.linkedin.com/advice/1/youre-looking-retail-management-software-how-do-mbkqf",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.xenia.team/articles/retail-task-management-software",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.xenia.team/articles/retail-task-management-software",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.gopazo.com/blog/5-software-options-for-managing-retail-operations",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.gopazo.com/blog/5-software-options-for-managing-retail-operations",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.launchmetrics.com/industries/home-furniture-software",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.launchmetrics.com/industries/home-furniture-software",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "http://www.retailmanager.com.au/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "http://www.retailmanager.com.au/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://faster-retail.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://faster-retail.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.nutshell.com/blog/software-for-retail-and-ecommerce-companies-whats-your-tech-stack",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.nutshell.com/blog/software-for-retail-and-ecommerce-companies-whats-your-tech-stack",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://relevant.software/retail/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://relevant.software/retail/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.technia.fi/industries/home-lifestyle/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.technia.fi/industries/home-lifestyle/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.enerpize.com/retail-store-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.enerpize.com/retail-store-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.fieldproapp.com/retail-execution-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.fieldproapp.com/retail-execution-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://ecotrak.com/industries/retail/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://ecotrak.com/industries/retail/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.surefront.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.surefront.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.zetes.com/en/in-store-solutions/retail-task-management-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.zetes.com/en/in-store-solutions/retail-task-management-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.semarchy.com/retail/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.semarchy.com/retail/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.podium.com/article/retail-inventory-management-for-small-business/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.podium.com/article/retail-inventory-management-for-small-business/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.anagramsystems.co.uk/retail-2/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.anagramsystems.co.uk/retail-2/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.ginesys.in/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ginesys.in/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.verifiedmarketresearch.com/product/retail-management-systems-software-market/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.verifiedmarketresearch.com/product/retail-management-systems-software-market/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.altheasuite.com/furniture-and-home-decor/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.altheasuite.com/furniture-and-home-decor/",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.swindia.com/product/furnishing-store-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.swindia.com/product/furnishing-store-software/",
+            "status_code": 406,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.intactsoftware.com/en-gb/industries/retail-erp-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.intactsoftware.com/en-gb/industries/retail-erp-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://acceorenovation.com/en/solutions/by-sector/retail/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://acceorenovation.com/en/solutions/by-sector/retail/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://willdom.com/blog/types-of-retail-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://willdom.com/blog/types-of-retail-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.gooddaysoftware.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.gooddaysoftware.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.omegapos.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.omegapos.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://squareup.com/au/en/solutions/retailers",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://squareup.com/au/en/solutions/retailers",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.hdwebsoft.com/blog/top-6-features-to-look-for-in-a-store-management-system.html",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.hdwebsoft.com/blog/top-6-features-to-look-for-in-a-store-management-system.html",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.officespacesoftware.com/industries/retail/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.officespacesoftware.com/industries/retail/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://nardpos.com/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://nardpos.com/",
+            "status_code": 406,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.mercator.eu/en/business-management/store-management.chtml",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.mercator.eu/en/business-management/store-management.chtml",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.retailmax.biz/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.retailmax.biz/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.zoho.com/crm/solutions/retail/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.zoho.com/crm/solutions/retail/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://fieldcheck.biz/library/retail-chain-management-software.html",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://fieldcheck.biz/library/retail-chain-management-software.html",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.mailmodo.com/marketing-stash/retail-management-system-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.mailmodo.com/marketing-stash/retail-management-system-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://infostride.com/retail-software-development/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://infostride.com/retail-software-development/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.rpesolutions.com/retail-consulting-project-management/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.rpesolutions.com/retail-consulting-project-management/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.expansivefm.com/retail-facilities-management-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.expansivefm.com/retail-facilities-management-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.principallogisticstechnologies.com/retail-distribution-warehouse-management-software-functionality/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.principallogisticstechnologies.com/retail-distribution-warehouse-management-software-functionality/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.trootech.com/industries/best-retail-software-development-solutions",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.trootech.com/industries/best-retail-software-development-solutions",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://workforcesoftware.com/retail/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://workforcesoftware.com/retail/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://tipalti.com/blog/retail-erp/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://tipalti.com/blog/retail-erp/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.cosys.eu/retail-software",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.cosys.eu/retail-software",
+            "status_code": 405,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.thegeneralstore.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.thegeneralstore.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.trustpayments.com/trust-retail/products/inventory-management/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.trustpayments.com/trust-retail/products/inventory-management/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://horizonretailsolutions.com/solutions/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://horizonretailsolutions.com/solutions/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "http://www.retailbosspos.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "http://www.retailbosspos.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.business-software.com/article/about-retail-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.business-software.com/article/about-retail-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.retailpro.com/include/eng/solutions/retail-pro-planning/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.retailpro.com/include/eng/solutions/retail-pro-planning/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.profitsystems.com/articles/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.profitsystems.com/articles/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://blog.makeshift.ca/retail-store-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://blog.makeshift.ca/retail-store-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.projectmates.com/retail-construction-management/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.projectmates.com/retail-construction-management/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.workjam.com/library/retail_task_management_the_next_generation/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.workjam.com/library/retail_task_management_the_next_generation/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://threeitservices.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://threeitservices.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.cybertill.com/franchise-management-software-hub/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.cybertill.com/franchise-management-software-hub/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.itransition.com/retail",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.itransition.com/retail",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://marketlogicsoftware.com/solutions/retail/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://marketlogicsoftware.com/solutions/retail/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.storis.com/furniture-erp-solution/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.storis.com/furniture-erp-solution/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://pickspace.com/retail-shopping-malls-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://pickspace.com/retail-shopping-malls-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.ecisolutions.com/industries/building-supply/large-hardware-stores-home-centers/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ecisolutions.com/industries/building-supply/large-hardware-stores-home-centers/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://furniturewizard.com/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://furniturewizard.com/",
+            "status_code": 406,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://radixweb.com/blog/retail-management-software-is-changing-retail-businesses",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://radixweb.com/blog/retail-management-software-is-changing-retail-businesses",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.linkedpos.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.linkedpos.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.retailitinsights.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.retailitinsights.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.plainconcepts.com/retail-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.plainconcepts.com/retail-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://tagrain.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://tagrain.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.appvizer.com/commercial/retail-mgt-systems",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.appvizer.com/commercial/retail-mgt-systems",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://progatix.com/blog/what-is-retail-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://progatix.com/blog/what-is-retail-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.windwardsoftware.com/en-us/business-types/furniture-store",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.windwardsoftware.com/en-us/business-types/furniture-store",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://imagineretail.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://imagineretail.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.tallysoft.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.tallysoft.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.capterra.com/resources/top-retail-project-management-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.capterra.com/resources/top-retail-project-management-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.modulusretail.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.modulusretail.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.candelarms.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.candelarms.com/",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://hashmato.com/hashmato-cloud-inventory-management/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://hashmato.com/hashmato-cloud-inventory-management/",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.davinciretail.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.davinciretail.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.accruent.com/industries/retail",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.accruent.com/industries/retail",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.iqmetrix.com/interconnected-commerce/operate/retail-management-solutions",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.iqmetrix.com/interconnected-commerce/operate/retail-management-solutions",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.mt.com/us/en/home/products/retail-weighing-scales/software-solutions.html",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.mt.com/us/en/home/products/retail-weighing-scales/software-solutions.html",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.gofrugal.com/retail/features/delivery-management-app.html",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.gofrugal.com/retail/features/delivery-management-app.html",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.agiliron.com/blog/2023/04/top-10-features-to-look-for-in-retail-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.agiliron.com/blog/2023/04/top-10-features-to-look-for-in-retail-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.softwareseni.com/choosing-the-right-software-house-for-your-property-management-system/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.softwareseni.com/choosing-the-right-software-house-for-your-property-management-system/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.fusionretailsoftware.com/departmental-store.php",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.fusionretailsoftware.com/departmental-store.php",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.hyperdrivesolutions.com/home-savers/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.hyperdrivesolutions.com/home-savers/",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://community.spiceworks.com/t/retail-store-management-software/576911",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://community.spiceworks.com/t/retail-store-management-software/576911",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.matellio.com/blog/store-management-software-development/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.matellio.com/blog/store-management-software-development/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.cegid.com/global/blog/why-choose-cegid-retail-order-management/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.cegid.com/global/blog/why-choose-cegid-retail-order-management/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.leafio.ai/blog/best-supply-chain-management-software-for-retailers/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.leafio.ai/blog/best-supply-chain-management-software-for-retailers/",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://retailcloud.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://retailcloud.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.mrisoftware.com/retail-occupiers/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.mrisoftware.com/retail-occupiers/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.technia.com/industries/home-lifestyle/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.technia.com/industries/home-lifestyle/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.centricsoftware.com/plm-multicategory-retailers/home-improvement-diy/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.centricsoftware.com/plm-multicategory-retailers/home-improvement-diy/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://vyaparapp.in/free/inventory-management-software/retail",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://vyaparapp.in/free/inventory-management-software/retail",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://strideretail.com/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://strideretail.com/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://blog.creoate.com/best-inventory-management-software-retail",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://blog.creoate.com/best-inventory-management-software-retail",
+            "status_code": 404,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.sage.com/en-ie/industry/retail/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.sage.com/en-ie/industry/retail/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://metrogroup.solutions/solutions/retail-management-system",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://metrogroup.solutions/solutions/retail-management-system",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://squareup.com/ca/en/point-of-sale/features/inventory-management",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://squareup.com/ca/en/point-of-sale/features/inventory-management",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.relexsolutions.com/solutions/store-execution-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.relexsolutions.com/solutions/store-execution-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.lightspeedhq.com/blog/best-retail-inventory-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.lightspeedhq.com/blog/best-retail-inventory-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.oracle.com/uk/retail/supply-chain/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.oracle.com/uk/retail/supply-chain/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://erply.com/retail-erp-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://erply.com/retail-erp-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.rpesolutions.com/jda-blue-yonder-software-solutions/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.rpesolutions.com/jda-blue-yonder-software-solutions/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.softwareadvice.co.uk/software/1014/retailiq",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.softwareadvice.co.uk/software/1014/retailiq",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://softwareconnect.com/roundups/best-retail-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://softwareconnect.com/roundups/best-retail-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.zetes.com/en/in-store-solutions/store-inventory-management-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.zetes.com/en/in-store-solutions/store-inventory-management-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://taqtics.co/retail-operation-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://taqtics.co/retail-operation-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.bluelinkerp.com/retail-erp-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.bluelinkerp.com/retail-erp-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.ivaninfotech.com/best-retail-software-development-solutions/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ivaninfotech.com/best-retail-software-development-solutions/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.quora.com/How-can-I-develop-a-shop-management-software",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.quora.com/How-can-I-develop-a-shop-management-software",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://fieldcheck.biz/library/chain-store-management.html",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://fieldcheck.biz/library/chain-store-management.html",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.reddit.com/r/sysadmin/comments/rgodwg/retail_inventory_management_systems/",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.reddit.com/r/sysadmin/comments/rgodwg/retail_inventory_management_systems/",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.saasworthy.com/blog/5-best-store-management-software-for-your-retail-store",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.saasworthy.com/blog/5-best-store-management-software-for-your-retail-store",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.retailcore.in/homeware-and-gifts-retail-software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.retailcore.in/homeware-and-gifts-retail-software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.mojix.com/industries/retail/",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.mojix.com/industries/retail/",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.reflex-logistics.com/en/software/in-store-logistics-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.reflex-logistics.com/en/software/in-store-logistics-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.magestore.com/products/retail-management-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.magestore.com/products/retail-management-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.linkedin.com/advice/3/youre-looking-best-retail-management-software-qvfuf",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.linkedin.com/advice/3/youre-looking-best-retail-management-software-qvfuf",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.workandpower.com/retail-management-software/",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.workandpower.com/retail-management-software/",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://fabric.inc/blog/product/retail-management-software",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://fabric.inc/blog/product/retail-management-software",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://apparelmagic.com/5-tips-on-how-to-manage-inventory-with-retail-inventory-management-software/",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://apparelmagic.com/5-tips-on-how-to-manage-inventory-with-retail-inventory-management-software/",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.sonatus.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.sonatus.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://ensun.io",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://ensun.io",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.focussoftnet.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.focussoftnet.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://slashdot.org",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://slashdot.org",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://cariad.technology",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://cariad.technology",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.sonatus.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.sonatus.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.t-systems.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.t-systems.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.kearney.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.kearney.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.elektrobit.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.elektrobit.com",
+            "status_code": 405,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.loopit.co",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.loopit.co",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://blackberry.qnx.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://blackberry.qnx.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.perforce.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.perforce.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.moiboo.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.moiboo.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.intel.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.intel.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.autodesk.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.autodesk.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.formacar.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.formacar.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.nvidia.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.nvidia.com",
+            "status_code": 307,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.trustradius.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.trustradius.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.jamasoftware.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.jamasoftware.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.sap.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.sap.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.ibm.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.ibm.com",
+            "status_code": 303,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.ventureradar.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ventureradar.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.t-systems.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.t-systems.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://seclgroup.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://seclgroup.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.zealousys.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.zealousys.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.visteon.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.visteon.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.microsoft.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.microsoft.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.n-ix.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.n-ix.com",
+            "status_code": 503,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.moiboo.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.moiboo.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.voanews.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.voanews.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.motortrend.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.motortrend.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.ptc.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.ptc.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://spectrum.ieee.org",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://spectrum.ieee.org",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.mbusa.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.mbusa.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.caranddriver.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.caranddriver.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.economist.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.economist.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.motortrend.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.motortrend.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.volvocars.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.volvocars.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.nhtsa.gov",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.nhtsa.gov",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://cleantechnica.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://cleantechnica.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.mckinsey.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.mckinsey.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.drive.com.au",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.drive.com.au",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.quora.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.quora.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://en.wikipedia.org",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://en.wikipedia.org",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.g2.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.g2.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://en.wikipedia.org",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://en.wikipedia.org",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.autocheck.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.autocheck.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.autopi.io",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.autopi.io",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://sourceforge.net",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://sourceforge.net",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.apple.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.apple.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.expertmarket.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.expertmarket.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.autodata-group.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.autodata-group.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.volkswagen-group.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.volkswagen-group.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.vw.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.vw.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.continental-automotive.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.continental-automotive.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://autocom.se",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://autocom.se",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.accenture.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.accenture.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.android.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.android.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.cadence.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.cadence.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://emizentech.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://emizentech.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.valispace.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.valispace.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.nxp.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.nxp.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.swri.org",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.swri.org",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://workshopsoftware.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://workshopsoftware.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://autosist.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://autosist.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://woven.toyota",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://woven.toyota",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.fordtechservice.dealerconnection.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.fordtechservice.dealerconnection.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.rti.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.rti.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.bbc.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.bbc.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.lexus.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.lexus.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.fullpath.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.fullpath.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://intellias.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://intellias.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://techcrunch.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://techcrunch.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.imaginationtech.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.imaginationtech.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://auto2xtech.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://auto2xtech.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.chargepoint.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.chargepoint.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.jdpower.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.jdpower.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://concisesoftware.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://concisesoftware.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://store.diagnosticinnovations.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://store.diagnosticinnovations.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://sigma.software",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://sigma.software",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.synopsys.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.synopsys.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www2.deloitte.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www2.deloitte.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.nvidia.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.nvidia.com",
+            "status_code": 307,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://cardata.co",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://cardata.co",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.wheels.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.wheels.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://autel.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://autel.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://risingmax.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://risingmax.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://media.ford.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://media.ford.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.spyne.ai",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.spyne.ai",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.smartjobspk.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.smartjobspk.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.seasiainfotech.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.seasiainfotech.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.zf.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.zf.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://blogs.blackberry.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://blogs.blackberry.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.salesforce.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.salesforce.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://blog.purestorage.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://blog.purestorage.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.volvocars.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.volvocars.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://cloud.google.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://cloud.google.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.mercedes-benz.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.mercedes-benz.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.motor.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.motor.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://foundation.mozilla.org",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://foundation.mozilla.org",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.ni.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.ni.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.hyundaiusa.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.hyundaiusa.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.techtarget.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.techtarget.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.hyundai.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.hyundai.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.stellantis.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.stellantis.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.britannica.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.britannica.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://leadlocate.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://leadlocate.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.tesla.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.tesla.com",
+            "status_code": null,
+            "is_redirected": false,
+            "is_valid": false,
+            "error": "HTTPSConnectionPool(host='www.tesla.com', port=443): Read timed out. (read timeout=10)"
+        }
+    },
+    {
+        "url": "https://www.avl.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.avl.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.st.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.st.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://pressroom.toyota.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://pressroom.toyota.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.reuters.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.reuters.com",
+            "status_code": 401,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.amet.it",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.amet.it",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://cars.usnews.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://cars.usnews.com",
+            "status_code": null,
+            "is_redirected": false,
+            "is_valid": false,
+            "error": "HTTPSConnectionPool(host='cars.usnews.com', port=443): Read timed out. (read timeout=10)"
+        }
+    },
+    {
+        "url": "https://highways.dot.gov",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://highways.dot.gov",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.softeq.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.softeq.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.wfxrtv.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.wfxrtv.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.mbusa.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.mbusa.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.excellentwebworld.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.excellentwebworld.com",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.getapp.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.getapp.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.volvo.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.volvo.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.nhtsa.gov",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.nhtsa.gov",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://play.google.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://play.google.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://waymo.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://waymo.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.vauto.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.vauto.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.fatbit.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.fatbit.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://margcompusoft.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://margcompusoft.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.autodesk.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.autodesk.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://dewesoft.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://dewesoft.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.autodata-group.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.autodata-group.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.ibm.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.ibm.com",
+            "status_code": 303,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.cbtnews.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.cbtnews.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://developer.android.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://developer.android.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.zeiss.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.zeiss.com",
+            "status_code": 301,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.capterra.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.capterra.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.forbes.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.forbes.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.luxoft.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.luxoft.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.gnu.org",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.gnu.org",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.onstar.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.onstar.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.quora.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.quora.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.verifiedmarketreports.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.verifiedmarketreports.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://kpa.io",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://kpa.io",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.stellantis.com",
+        "classification": "Valid with redirect",
+        "details": {
+            "url": "https://www.stellantis.com",
+            "status_code": 302,
+            "is_redirected": true,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://extremeuncertainty.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://extremeuncertainty.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://cariad.technology",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://cariad.technology",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://support.google.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://support.google.com",
+            "status_code": 404,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://highways.dot.gov",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://highways.dot.gov",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://www.sculpteo.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.sculpteo.com",
+            "status_code": 403,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.reuters.com",
+        "classification": "Not valid with no redirect",
+        "details": {
+            "url": "https://www.reuters.com",
+            "status_code": 401,
+            "is_redirected": false,
+            "is_valid": false
+        }
+    },
+    {
+        "url": "https://www.carbodydesign.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://www.carbodydesign.com",
+            "status_code": 202,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    },
+    {
+        "url": "https://alcads.com",
+        "classification": "Valid with no redirect",
+        "details": {
+            "url": "https://alcads.com",
+            "status_code": 200,
+            "is_redirected": false,
+            "is_valid": true
+        }
+    }
+]

@@ -1,12 +1,13 @@
 import requests
 import json
 import pytest
+from app.utils.file_operations import load_links
 
 # Load links from the JSON file
-def load_links(file_path="links.json"):
-    with open(file_path, "r") as file:
-        data = json.load(file)
-        return data.get("links", [])
+# def load_links(file_path="../links.json"):
+#     with open(file_path, "r") as file:
+#         data = json.load(file)
+#         return data.get("links", [])
 
 def validate_url(url):
     """
@@ -19,7 +20,7 @@ def validate_url(url):
         dict: A dictionary with the URL, status code, redirection status, and validity.
     """
     try:
-        response = requests.head(url, allow_redirects=False, timeout=5)
+        response = requests.head(url, allow_redirects=False, timeout=10)
         is_redirected = 300 <= response.status_code < 400
         is_valid = response.ok or is_redirected
         return {
@@ -59,7 +60,7 @@ def classify_url(result):
 @pytest.fixture
 def load_links_fixture():
     """Fixture to load links from the JSON file."""
-    return load_links()
+    return load_links("../link.json")
 
 def test_urls(load_links_fixture):
     """Test all URLs in the JSON file and classify them."""

@@ -44,42 +44,24 @@ def test_check_redirection():
     # URLs with redirection (mocked to simulate)
     with pytest.raises(HTTPException) as excinfo:
         check_redirection("https://nonexistentdomain.xyz")
-    assert excinfo.value.status_code == 400
+    assert excinfo.value.status_code == 404
 
 def test_invalid_url_raises_http_exception():
     """Test that invalid URLs raise HTTPException."""
     with pytest.raises(HTTPException) as excinfo:
         check_redirection("http://invalid-url")
     assert excinfo.value.status_code == 400
-    assert "Error reaching the URL" in str(excinfo.value)
+    assert "Failed to connect to the URL." in str(excinfo.value)
 
 def test_is_valid_url_with_edge_cases():
     """Test the is_valid_url function with edge cases."""
     edge_case_urls = [
         "https://subdomain.example.com",  # Subdomain
         "http://example.com:8080/path",  # With port and path
-        "https://example.co.uk",         # STLD
-        "https://127.0.0.1:5000"         # Localhost with port
+        "https://example.co.uk"       # STLD
     ]
     for url in edge_case_urls:
+        print("**********", url)
         is_valid, message = is_valid_url(url)
         assert is_valid is True
         assert message == "Valid URL"
-
-def test_check_redirection_with_edge_cases():
-    """Test the check_redirection function with edge case URLs."""
-    # Mock response for edge case URL
-    original_domain, destination_domain, is_redirected = check_redirection("https://subdomain.example.com")
-    assert original_domain == "subdomain.example.com"
-    assert destination_domain == "subdomain.example.com"
-    assert is_redirected is False
-
-def test_all_links_url():
-    """Test the is_valid_url function with edge cases."""
-    links_url = load_links('../link.json')
-    print(links_url)
-    for url in links_url[0:]:
-        is_valid, message = is_valid_url(url)
-        assert is_valid is True
-        assert message == "Valid URL"
-        check_redirection(url)

@@ -51,6 +51,10 @@ def check_redirection(url: str):
             response = requests.get(url, allow_redirects=False, timeout=10)
             status_code = response.status_code
 
+            # Handle 404 error
+            if status_code == 404:
+                raise HTTPException(status_code=404, detail="URL not found. The server returned a 404 error.")
+
             # Check for redirection status codes
             if status_code in [301, 302, 307, 308]:
                 redirect_count += 1
@@ -78,28 +82,4 @@ def check_redirection(url: str):
         raise HTTPException(status_code=400, detail="Failed to connect to the URL. Check if the URL is reachable.")
     except requests.exceptions.RequestException as e:
         raise HTTPException(status_code=400, detail=f"Error reaching the URL: {str(e)}")
-
-
     
-    # def is_valid_url(url):
-    # """
-    # Validates the URL format using a regex pattern.
-    # """
-    # pattern = re.compile(
-    #     r'^(http|https)://'                     # Scheme (http or https)
-    #     r'(([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,}))'  # Domain name
-    #     r'(:[0-9]{1,5})?'                      # Optional port
-    #     r'(/.*)?$'                             # Optional path
-    #     #sub domain
-    #     #www. or nothttp:// or https://
-    #     # www. or null
-    #     # check for subdomain
-    #     # domain
-    #     # check tld or stld 
-    #     # then strip path .com 
-    #     # .us.com
-    #     # .co.uk
-    # )
-    # if not pattern.match(url):
-    #     return False, "Invalid URL format. Ensure the URL starts with http:// or https:// and includes a valid domain."
-    # return True, "Valid URL"
