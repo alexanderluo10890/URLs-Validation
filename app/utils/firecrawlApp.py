@@ -165,3 +165,55 @@ except Exception as e:
     raise
 
 logging.info("All steps completed successfully.")
+
+
+# ------------------------------------------------------
+# 7. Load general website content from 'scraped_data.json'
+# ------------------------------------------------------
+def load_scraped_website_content(
+    filename: str = "scraped_data.json",
+    content_key: str = "markdown",
+    max_pages: int = None
+) -> list:
+    """
+    A general-purpose function to load text from your 'scraped_data.json' file.
+    Returns a list of strings, one per item in the JSON, focusing on the specified `content_key`
+    (defaults to 'markdown').
+
+    :param filename: The JSON file to load (defaults to 'scraped_data.json')
+    :param content_key: The key in each record containing the text content (e.g. 'markdown')
+    :param max_pages: If provided, limits how many records to return
+    :return: List of page contents as strings
+    """
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        logging.error("Could not read or parse '%s': %s", filename, e)
+        return []
+
+    # 'data' might be a list or dict.
+    # Usually, 'scraped_data.json' is a list of items from Firecrawl.
+    pages = []
+
+    if isinstance(data, list):
+        for entry in data:
+            # Some records might have 'markdown' content
+            text = entry.get(content_key, "")
+            if isinstance(text, str):
+                pages.append(text)
+            # If content_key is a list, we might join them or handle differently
+    elif isinstance(data, dict) and "data" in data:
+        # If it's a dict with a 'data' list inside
+        for entry in data["data"]:
+            text = entry.get(content_key, "")
+            if isinstance(text, str):
+                pages.append(text)
+    else:
+        logging.warning("Unknown structure in '%s'. Returning empty list.", filename)
+        return []
+
+    if max_pages is not None:
+        pages = pages[:max_pages]
+
+    return pages
