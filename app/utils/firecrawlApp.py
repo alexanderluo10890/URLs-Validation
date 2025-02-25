@@ -173,7 +173,7 @@ logging.info("All steps completed successfully.")
 def load_scraped_website_content(
     filename: str = "scraped_data.json",
     content_key: str = "markdown",
-    max_pages: int = None
+    max_pages: int = None # type: ignore
 ) -> list:
     """
     A general-purpose function to load text from your 'scraped_data.json' file.
