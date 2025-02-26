@@ -1,5 +1,5 @@
 import json
-from typing import List
+from typing import List, cast
 
 def load_links(json_file: str) -> List[str]:
     """
@@ -15,7 +15,7 @@ def load_links(json_file: str) -> List[str]:
         with open(json_file, "r") as file:
             data = json.load(file)
             print(data)
-            return data.get("links", [])
+            return cast(List[str], data.get("links", []))
     except FileNotFoundError:
         print(f"Error: File '{json_file}' not found.")
         return []
