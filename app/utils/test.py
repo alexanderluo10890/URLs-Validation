@@ -15,14 +15,12 @@ This module is typically run during setup or troubleshooting to ensure
 all required services are accessible before proceeding with production.
 """
 
-import os
 import sys
 import requests
 import json
 
-# Add parent directory to path to import config
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from utils.config import Config
+# Import config from parent directory
+from config import Config
 
 def test_azure_openai_api():
     """
