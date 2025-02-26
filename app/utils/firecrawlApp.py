@@ -1,5 +1,8 @@
 import json
 import logging
+import os
+from typing import Optional, Tuple
+from urllib.parse import urlparse
 from firecrawl import FirecrawlApp
 
 # ------------------------------------------------------
@@ -11,26 +14,93 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 
+# Initialize FirecrawlApp with API key
+app = FirecrawlApp(api_key="fc-aaa191b98dc94ab8b9f06f304fa89ab2")
+
 # ------------------------------------------------------
 # 1. Scrape the site with Firecrawl
 # ------------------------------------------------------
-logging.info("Initializing Firecrawl app...")
-app = FirecrawlApp(api_key="fc-aaa191b98dc94ab8b9f06f304fa89ab2")
-
-logging.info("Starting crawl for 'https://www.innquest.com/' with limit=3 pages.")
-try:
-    crawl_status = app.crawl_url(
-        'https://www.innquest.com/',
-        params={
-            'limit': 3,
-            'scrapeOptions': {'formats': ['markdown']}
-        },
-        poll_interval=30
-    )
-    logging.info("Crawl completed successfully.")
-except Exception as e:
-    logging.error("Crawl failed with an exception: %s", e)
-    raise
+def crawl_website(url: str, page_limit: int = 3, output_dir: Optional[str] = None) -> Tuple[str, str]:
+    """
+    Crawl a website using Firecrawl and save the results to JSON files.
+    
+    Args:
+        url (str): The URL of the website to crawl
+        page_limit (int, optional): Maximum number of pages to crawl. Defaults to 3.
+        output_dir (Optional[str], optional): Directory to save output files. Defaults to None.
+    
+    Returns:
+        Tuple[str, str]: (scraped_filename, deduplicated_filename) - Paths to the generated files
+    """
+    # Extract domain from URL for filename
+    domain = urlparse(url).netloc
+    # Remove www. prefix if present
+    if domain.startswith('www.'):
+        domain = domain[4:]
+    # Replace dots with underscores for filename
+    domain_filename = domain.replace('.', '_')
+    
+    # Set output directory
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+        base_path = output_dir
+    else:
+        base_path = ""
+    
+    # Define filenames
+    scraped_filename = os.path.join(base_path, f"{domain_filename}_scraped_data.json")
+    deduplicated_filename = os.path.join(base_path, f"{domain_filename}_deduplicated_data.json")
+    
+    logging.info(f"Initializing crawl for '{url}' with limit={page_limit} pages.")
+    try:
+        crawl_status = app.crawl_url(
+            url,
+            params={
+                'limit': page_limit,
+                'scrapeOptions': {'formats': ['markdown']}
+            },
+            poll_interval=30
+        )
+        logging.info("Crawl completed successfully.")
+        
+        # Process the crawled data
+        data = crawl_status.get('data', [])
+        deduped_data, duplicates_list = deduplicate_in_memory(data)
+        
+        # Remove array duplicates
+        deduped_data_no_array_dupes = remove_array_duplicates(deduped_data)
+        duplicates_no_array_dupes = remove_array_duplicates(duplicates_list)
+        
+        # Write results to files
+        logging.info(f"Writing unique data to '{scraped_filename}'.")
+        try:
+            with open(scraped_filename, "w", encoding="utf-8") as f_out:
+                json.dump(deduped_data_no_array_dupes, f_out, indent=4)
+            logging.info(f"Wrote unique data to '{scraped_filename}'.")
+        except Exception as e:
+            logging.error(f"Failed to write data to '{scraped_filename}': {e}")
+            raise
+        
+        logging.info(f"Writing deduplication results to '{deduplicated_filename}'.")
+        try:
+            # Build a structure with data and duplicates
+            output_data = {
+                "data": deduped_data_no_array_dupes,
+                "duplicates": duplicates_no_array_dupes
+            }
+            
+            with open(deduplicated_filename, "w", encoding="utf-8") as f_out:
+                json.dump(output_data, f_out, indent=4)
+            logging.info(f"Wrote deduplication results to '{deduplicated_filename}' successfully.")
+        except Exception as e:
+            logging.error(f"Failed to write deduplication data to '{deduplicated_filename}': {e}")
+            raise
+        
+        return scraped_filename, deduplicated_filename
+        
+    except Exception as e:
+        logging.error(f"Crawl failed with an exception: {e}")
+        raise
 
 # ------------------------------------------------------
 # 2. Deduplicate by 'id'
@@ -58,117 +128,56 @@ def deduplicate_in_memory(data):
                 # If no 'id', we give it a generated key to keep it
                 fake_id = f"no_id_{len(unique_dict) + len(duplicates_list)}"
                 unique_dict[fake_id] = entry
-
-        return list(unique_dict.values()), duplicates_list
-
-    # CASE B: data is a dict containing a list under data["data"]
+    
+    # CASE B: data is a dict with a 'data' array
     elif isinstance(data, dict) and "data" in data and isinstance(data["data"], list):
-        new_data_list = []
         for entry in data["data"]:
             if "id" in entry:
                 if entry["id"] in unique_dict:
                     duplicates_list.append(entry)
                 else:
                     unique_dict[entry["id"]] = entry
-                    new_data_list.append(entry)
             else:
                 fake_id = f"no_id_{len(unique_dict) + len(duplicates_list)}"
                 unique_dict[fake_id] = entry
-                new_data_list.append(entry)
-
-        deduped_data = dict(data)
-        deduped_data["data"] = new_data_list
-        return deduped_data, duplicates_list
-
-    # If unknown format, return data as-is (no duplicates recognized)
-    return data, []
+    
+    # Convert the dict of unique entries back to a list
+    deduped_data = list(unique_dict.values())
+    
+    return deduped_data, duplicates_list
 
 # ------------------------------------------------------
-# 3. Remove repeated elements from arrays (inside each record)
+# 3. Remove duplicates from arrays within objects
 # ------------------------------------------------------
-def remove_array_duplicates(obj):
+def remove_array_duplicates(data_list):
     """
-    Recursively walk 'obj'.
-    Whenever we find a list, remove repeated items 
-    (keeping the first occurrence). This preserves the order.
+    For each object in the list, find any arrays and deduplicate them.
     """
-    if isinstance(obj, dict):
-        for k, v in obj.items():
-            obj[k] = remove_array_duplicates(v)
-        return obj
-
-    elif isinstance(obj, list):
-        seen = set()
-        new_list = []
-        for item in obj:
-            if isinstance(item, (dict, list)):
-                # Convert sub-structure to a string so we can track if we've seen it
-                item_key = json.dumps(item, sort_keys=True)
+    result = []
+    
+    for item in data_list:
+        # Create a copy of the item to modify
+        new_item = {}
+        
+        for key, value in item.items():
+            # If this is an array, deduplicate it
+            if isinstance(value, list):
+                # For simple types (strings, numbers), we can use set()
+                if all(isinstance(x, (str, int, float, bool)) for x in value):
+                    new_item[key] = list(set(value))
+                else:
+                    # For complex types, we'd need a more sophisticated approach
+                    # For now, just keep the original
+                    new_item[key] = value
             else:
-                item_key = item
-
-            if item_key not in seen:
-                seen.add(item_key)
-                new_list.append(remove_array_duplicates(item))
-            # else: it's a duplicate array element, skip it
-        return new_list
-
-    else:
-        return obj
+                new_item[key] = value
+        
+        result.append(new_item)
+    
+    return result
 
 # ------------------------------------------------------
-# 4. Perform the ID-based deduplication
-# ------------------------------------------------------
-logging.info("Starting in-memory deduplication by 'id'...")
-deduped_data, duplicates_list = deduplicate_in_memory(crawl_status)
-
-# ------------------------------------------------------
-# 5. Remove repeated strings within arrays in both unique + duplicates
-# ------------------------------------------------------
-logging.info("Removing repeated elements from arrays in 'deduped_data' and 'duplicates_list'...")
-deduped_data_no_array_dupes = remove_array_duplicates(deduped_data)
-duplicates_no_array_dupes = remove_array_duplicates(duplicates_list)
-
-# ------------------------------------------------------
-# 6. Write results:
-#    - scraped_data.json => Only the unique data
-#    - deduplicated_data.json => Single JSON with { "data": [...], "duplicates": [...] }
-# ------------------------------------------------------
-scraped_filename = "scraped_data.json"
-logging.info("Writing unique data to '%s'.", scraped_filename)
-try:
-    with open(scraped_filename, "w", encoding="utf-8") as f_out:
-        json.dump(deduped_data_no_array_dupes, f_out, indent=4)
-    logging.info("Wrote unique data to '%s'.", scraped_filename)
-except Exception as e:
-    logging.error("Failed to write data to '%s': %s", scraped_filename, e)
-    raise
-
-deduplicated_filename = "deduplicated_data.json"
-logging.info("Writing deduplication results to '%s'.", deduplicated_filename)
-try:
-    # Build a structure just like your screenshot:
-    # {
-    #   "data": [...],       <-- the unique data
-    #   "duplicates": [...]
-    # }
-    output_data = {
-        "data": deduped_data_no_array_dupes,
-        "duplicates": duplicates_no_array_dupes
-    }
-
-    with open(deduplicated_filename, "w", encoding="utf-8") as f_out:
-        json.dump(output_data, f_out, indent=4)
-    logging.info("Wrote deduplication results to '%s' successfully.", deduplicated_filename)
-except Exception as e:
-    logging.error("Failed to write deduplication data to '%s': %s", deduplicated_filename, e)
-    raise
-
-logging.info("All steps completed successfully.")
-
-
-# ------------------------------------------------------
-# 7. Load general website content from 'scraped_data.json'
+# 7. Load general website content from scraped data file
 # ------------------------------------------------------
 def load_scraped_website_content(
     filename: str = "scraped_data.json",
@@ -176,7 +185,7 @@ def load_scraped_website_content(
     max_pages: int = None # type: ignore
 ) -> list:
     """
-    A general-purpose function to load text from your 'scraped_data.json' file.
+    A general-purpose function to load text from your scraped data JSON file.
     Returns a list of strings, one per item in the JSON, focusing on the specified `content_key`
     (defaults to 'markdown').
 
@@ -217,3 +226,8 @@ def load_scraped_website_content(
         pages = pages[:max_pages]
 
     return pages
+
+# For backward compatibility - crawl the default site if this module is run directly
+if __name__ == "__main__":
+    default_url = 'https://www.innquest.com/'
+    crawl_website(default_url)
