@@ -3,7 +3,7 @@ from app.routes.url_validation import router as url_validation_router
 
 app = FastAPI()
 
-# Include routes
+# Include only the URL validation routes
 app.include_router(url_validation_router, prefix="/validate-url", tags=["URL Validation"])
 
 @app.get("/")
