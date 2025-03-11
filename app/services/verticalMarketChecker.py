@@ -54,7 +54,7 @@ Provide detailed reasoning for your decision and conclude with a final answer of
 Do not include any extra text before or after your JSON response.
 Your response should be a valid JSON object with two keys:
 - "reasoning": a string explaining your thought process,
-- "final_answer": a string that is either "Yes" or "No".
+- "final_answer": a string that is either "True" or "False".
 """
     logger.debug("Report prompt constructed.")
     return prompt

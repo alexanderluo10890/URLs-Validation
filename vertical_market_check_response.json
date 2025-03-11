@@ -1,4 +1,4 @@
 {
-    "reasoning": "A vertical market software company specializes in providing software solutions tailored to the unique needs of a specific industry. In this report, InnQuest Software's products and services are designed specifically for the hospitality industry, targeting hotels, resorts, and related properties. Their offerings, such as property management systems, booking engines, and channel managers, are clearly focused on addressing the challenges of hotel operations, reservations, and guest experiences. This industry-specific focus confirms that InnQuest Software operates as a vertical market software company.",
-    "final_answer": "Yes"
-}   
+    "reasoning": "InnQuest Software is focused on providing software solutions specifically for the hospitality industry, including products such as a property management system, booking engine, channel manager, and payment system. The report shows that their offerings, customer segments, and case studies are all targeted specifically at hotels and resorts, indicating a niche industry focus. Thus, they qualify as a vertical market software company.",
+    "final_answer": "True"
+}
