@@ -4,7 +4,6 @@ import uvicorn
 import os
 
 # Import all routers
-from app.routes.url_validation import router as url_validation_router
 from app.routes.firecrawlScrapping import router as firecrawl_scrapping_router
 from app.routes.buildReport import router as build_report_router
 from app.routes.verticalMarketCheckerRouter import router as vertical_market_checker_router
@@ -16,7 +15,6 @@ def create_app() -> FastAPI:
     app = FastAPI(title="My API")
 
     # Include all routers
-    app.include_router(url_validation_router, prefix="/validate", tags=["URL Validation"])
     app.include_router(firecrawl_scrapping_router, prefix="/scrape", tags=["Firecrawl Scraping"])
     app.include_router(build_report_router, prefix="/report", tags=["Report Generation"])
     app.include_router(vertical_market_checker_router, prefix="/vertical-market-check", tags=["Vertical Market Check"])

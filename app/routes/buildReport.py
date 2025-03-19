@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from app.models.reportGenerationModels import ReportGenerationRequest, ReportGenerationResponse
-from app.services.openaiProcessor import build_report_prompt, send_prompt_to_openai
+from app.services.openaiProcessor import send_prompt_to_openai
+from app.prompts.report_prompts import get_report_prompt
 
 router = APIRouter()
 
@@ -13,7 +14,7 @@ def generate_report(request: ReportGenerationRequest):
     """
     try:
         # Build the prompt from scraped pages content
-        prompt = build_report_prompt(request.pages_text)
+        prompt = get_report_prompt(request.pages_text)
         
         # Send the prompt to Azure OpenAI and get structured output
         report_data = send_prompt_to_openai(prompt, max_retries=request.retries)

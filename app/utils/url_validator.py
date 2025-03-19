@@ -1,10 +1,7 @@
-from fastapi import APIRouter, HTTPException
-from app.models.url_validation import URLValidationRequest, URLValidationResponse
-from app.services.validators import is_valid_url, check_redirection
+from pydantic import HttpUrl
+from app.models.url_validation import URLValidationResponse
+from app.utils.validators import is_valid_url, check_redirection
 import logging
-
-# Initialize router
-router = APIRouter()
 
 # Logger setup for error handling
 logger = logging.getLogger("url_validation")
@@ -14,22 +11,27 @@ if not logger.hasHandlers():
     logger.addHandler(handler)
 logger.setLevel(logging.ERROR)
 
-@router.post("/", response_model=URLValidationResponse)
-def validate_url(request: URLValidationRequest):
+def validate_url(url: HttpUrl) -> URLValidationResponse:
     """
-    Route to validate a URL and determine its status.
+    Validate a URL and determine its status.
     Handles validation and redirection checks.
+    
+    Args:
+        url (HttpUrl): The URL to validate
+        
+    Returns:
+        URLValidationResponse: The validation result
     """
     try:
         # Explicitly convert HttpUrl to string
-        url = str(request.url)
+        url_str = str(url)
         
         # Step 1: Validate the URL format
-        is_valid, message = is_valid_url(url)
+        is_valid, message = is_valid_url(url_str)
         if not is_valid:
             return URLValidationResponse(
-                original_url=url,
-                destination_url=url,
+                original_url=url_str,
+                destination_url=url_str,
                 original_domain="Invalid domain",
                 destination_domain="Invalid domain",
                 is_valid=False,
@@ -37,20 +39,18 @@ def validate_url(request: URLValidationRequest):
             )
         
         # Step 2: Check for redirection
-        original_domain, destination_domain, is_redirected = check_redirection(url)
+        original_domain, destination_domain, is_redirected = check_redirection(url_str)
         
         # Step 3: Construct the response
         return URLValidationResponse(
-            original_url=url,
-            destination_url=destination_domain if is_redirected else url,
+            original_url=url_str,
+            destination_url=destination_domain if is_redirected else url_str,
             original_domain=original_domain,
             destination_domain=destination_domain,
             is_valid=True,
             is_redirected=is_redirected,
         )
-    except HTTPException as e:
-        raise e  # Rethrow known HTTP exceptions
     except Exception as e:
         # Log unexpected errors
-        logger.error(f"Unexpected error for URL: {request.url} - {str(e)}")
-        raise HTTPException(status_code=500, detail="An unexpected error occurred. Please try again later.")
+        logger.error(f"Unexpected error for URL: {url} - {str(e)}")
+        raise 

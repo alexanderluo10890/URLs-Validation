@@ -1,11 +1,219 @@
+"""
+Main entry point for the application that connects all the functionality.
+"""
+
+import argparse
+import json
+import logging
+from typing import Optional
+from app.services.openaiProcessor import send_prompt_to_openai, parse_into_pydantic
+from app.services.verticalMarketProcessor import load_report, save_response
+from app.utils.firecrawlApp import crawl_website, load_scraped_website_content
+from app.utils.validators import is_valid_url
+from app.prompts.report_prompts import get_report_prompt
+from app.prompts.vertical_market_prompts import get_vertical_market_prompt
 from fastapi import FastAPI
-from app.routes.url_validation import router as url_validation_router
+from app.routes.reports import router as reports_router
+from app.routes.firecrawlScrapping import router as firecrawl_scrapping_router
 
-app = FastAPI()
+# -----------------------------------------------------------------------------
+# Logging Setup
+# -----------------------------------------------------------------------------
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
-# Include only the URL validation routes
-app.include_router(url_validation_router, prefix="/validate-url", tags=["URL Validation"])
+# -----------------------------------------------------------------------------
+# FastAPI Setup
+# -----------------------------------------------------------------------------
+app = FastAPI(
+    title="Business Website Analysis API",
+    description="API for analyzing business websites and determining if they are vertical market software companies",
+    version="1.0.0"
+)
 
-@app.get("/")
-def root():
-    return {"message": "Welcome to the URL Validation API"}
+# -----------------------------------------------------------------------------
+# Register Routers
+# -----------------------------------------------------------------------------
+app.include_router(reports_router, prefix="/api")
+app.include_router(firecrawl_scrapping_router, prefix="/api/scrape")
+
+def validate_url(url: str) -> bool:
+    """
+    Validates if the provided string is a valid URL.
+    
+    Args:
+        url (str): The URL to validate
+        
+    Returns:
+        bool: True if the URL is valid, False otherwise
+    """
+    is_valid, _ = is_valid_url(url)
+    return is_valid
+
+def gather_scraped_content(url: Optional[str] = None, max_pages: Optional[int] = None, force_crawl: bool = False) -> str:
+    """
+    Loads the scraped website content and returns a single string containing the content of the pages.
+    
+    Args:
+        url (Optional[str], optional): URL to crawl if provided. Defaults to None.
+        max_pages (Optional[int], optional): Maximum number of pages to process. Defaults to None.
+        force_crawl (bool, optional): Force a new crawl even if data exists. Defaults to False.
+    
+    Returns:
+        str: Joined text content from all scraped pages
+        
+    Raises:
+        ValueError: If the URL is invalid or no pages are found to process
+        RuntimeError: If there's an error during crawling
+    """
+    if url:
+        # Validate URL
+        if not validate_url(url):
+            raise ValueError(f"Invalid URL format: {url}")
+        
+        # Check if we need to crawl the website
+        if force_crawl:
+            logger.info(f"Crawling website: {url}")
+            try:
+                scraped_filename, _ = crawl_website(url, page_limit=max_pages or 3)
+            except Exception as e:
+                raise RuntimeError(f"Failed to crawl website {url}: {str(e)}")
+    
+    # Load the content from the file
+    try:
+        pages_content = load_scraped_website_content(max_pages=int(max_pages or 3))
+        if not pages_content:
+            raise ValueError("No pages found to process.")
+        
+        joined_text = "\n\n---PAGE BREAK---\n\n".join(pages_content)
+        return joined_text
+    except FileNotFoundError:
+        raise ValueError("No scraped data found. Please make sure the website has been crawled.")
+    except Exception as e:
+        raise RuntimeError(f"Error loading content: {str(e)}")
+
+def save_report_to_json(report_model, filename: str = "final_website_report.json") -> None:
+    """
+    Save the report model to a JSON file.
+    
+    Args:
+        report_model: The report model to save
+        filename: The name of the file to save to
+    """
+    try:
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(report_model.model_dump(), f, indent=2, ensure_ascii=False)
+        logger.info(f"Report saved to {filename}")
+    except Exception as e:
+        logger.error(f"Error saving report to JSON: {e}")
+        raise
+
+def generate_website_report(url: str, max_pages: Optional[int] = None, force_crawl: bool = False) -> None:
+    """
+    Generate a business report from a website.
+    
+    Args:
+        url (str): The URL of the website to analyze
+        max_pages (Optional[int]): Maximum number of pages to process
+        force_crawl (bool): Whether to force a new crawl
+    """
+    try:
+        # Gather content from the website
+        content = gather_scraped_content(url, max_pages, force_crawl)
+        
+        # Get the report prompt
+        prompt = get_report_prompt(content)
+        
+        # Send to OpenAI and get response
+        data_dict = send_prompt_to_openai(prompt)
+        
+        # Parse into Pydantic model
+        report_model = parse_into_pydantic(data_dict)
+        
+        # Save the report
+        save_report_to_json(report_model)
+        
+        logger.info("Report generation completed successfully")
+    except Exception as e:
+        logger.error(f"Error generating report: {e}")
+        raise
+
+def analyze_vertical_market(report_file: str, output_file: str, retries: int = 3) -> None:
+    """
+    Analyze a business report to determine if the company is a vertical market software company.
+    
+    Args:
+        report_file (str): Path to the final website report JSON file
+        output_file (str): Output filename for the response
+        retries (int, optional): Number of retries for OpenAI API calls. Defaults to 3.
+    """
+    try:
+        logger.info("Loading report...")
+        report_text = load_report(report_file)
+    except Exception as e:
+        logger.error(f"Error loading report: {e}")
+        return
+    
+    try:
+        # Build the prompt for vertical market check
+        prompt = get_vertical_market_prompt(report_text)
+        logger.debug("Built prompt for vertical market check.")
+        
+        # Send to OpenAI
+        logger.info("Sending prompt to OpenAI (o3-mini)...")
+        response_data = send_prompt_to_openai(prompt, max_retries=retries)
+        
+        # Save the response
+        logger.info("Saving response...")
+        save_response(response_data, output_file)
+        
+        logger.info("Process completed successfully!")
+    except Exception as e:
+        logger.error(f"Error during analysis: {e}")
+
+def main():
+    """
+    Main entry point for the CLI application.
+    """
+    parser = argparse.ArgumentParser(
+        description="Business Website Analysis Tools"
+    )
+    subparsers = parser.add_subparsers(dest="command", help="Available commands")
+    
+    # Vertical Market Analysis command
+    vertical_parser = subparsers.add_parser(
+        "analyze-vertical",
+        help="Analyze a business report and check if the company is a vertical market software company"
+    )
+    vertical_parser.add_argument(
+        "--report",
+        type=str,
+        default="final_website_report.json",
+        help="Path to the final website report JSON file"
+    )
+    vertical_parser.add_argument(
+        "--output",
+        type=str,
+        default="vertical_market_analysis.json",
+        help="Output filename for the response"
+    )
+    vertical_parser.add_argument(
+        "--retries",
+        type=int,
+        default=3,
+        help="Number of retries for OpenAI API calls"
+    )
+    
+    args = parser.parse_args()
+    
+    if args.command == "analyze-vertical":
+        analyze_vertical_market(args.report, args.output, args.retries)
+    else:
+        parser.print_help()
+
+if __name__ == "__main__":
+    main()

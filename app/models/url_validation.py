@@ -28,8 +28,3 @@ class URLValidationResponse(BaseModel):
     destination_domain: str = Field(..., description="The final domain after redirection (if applicable)")
     is_valid: bool = Field(..., description="Indicates if the URL is valid")
     is_redirected: bool = Field(..., description="Indicates if the URL was redirected")
-
-
-#Original URL
-
-#Destination URL

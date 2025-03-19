@@ -1,3 +1,7 @@
+"""
+This module processes vertical market analysis.
+"""
+
 import json
 import os
 import time
@@ -5,6 +9,7 @@ import logging
 from openai import AzureOpenAI
 from dotenv import load_dotenv
 from typing import Dict, Any
+from app.prompts.vertical_market_prompts import get_vertical_market_prompt, get_vertical_market_system_message
 
 # -----------------------------------------------------------------------------
 # Logging Setup
@@ -43,18 +48,7 @@ def build_report_prompt(report_text: str) -> str:
     Returns:
         str: The prompt to send to OpenAI.
     """
-    prompt = f"""
-I have a business report in JSON format that was generated from a website analysis.
-Below is the report content:
-{report_text}
-
-Based on this report, please determine if the company is a vertical market software company.
-Provide detailed reasoning for your decision and conclude with a final answer of either "Yes" or "No".
-Do not include any extra text before or after your JSON response.
-Your response should be a valid JSON object with two keys:
-- "reasoning": a string explaining your thought process,
-- "final_answer": a string that is either "True" or "False".
-"""
+    prompt = get_vertical_market_prompt(report_text)
     logger.debug("Report prompt constructed.")
     return prompt
 
@@ -79,11 +73,7 @@ def send_prompt_to_openai(prompt: str, max_retries: int = 3, retry_delay: int = 
     attempt = 0
     last_error = None
     
-    system_message = (
-        "You are an expert analyst using a reasoning model. "
-        "Provide detailed reasoning and a final answer as a valid JSON object. "
-        "The JSON must include 'reasoning' and 'final_answer' keys, with 'final_answer' being either 'Yes' or 'No'."
-    )
+    system_message = get_vertical_market_system_message()
     
     while attempt < max_retries:
         try:
@@ -125,43 +115,45 @@ def send_prompt_to_openai(prompt: str, max_retries: int = 3, retry_delay: int = 
 # -----------------------------------------------------------------------------
 def load_report(filename: str) -> str:
     """
-    Loads the saved report from a JSON file and returns its content as a string.
+    Load a report from a JSON file.
     
     Args:
-        filename (str): Path to the final report file.
+        filename (str): The name of the file to load
         
     Returns:
-        str: The contents of the report file.
+        str: The report content as a string
         
     Raises:
-        ValueError: If the file is not found or empty.
+        FileNotFoundError: If the file doesn't exist
+        ValueError: If the file is empty or invalid JSON
     """
     if not os.path.exists(filename):
-        raise ValueError(f"Report file not found: {filename}")
+        raise FileNotFoundError(f"Report file not found: {filename}")
     
     try:
-        with open(filename, "r", encoding="utf-8") as f:
+        with open(filename, 'r', encoding='utf-8') as f:
             report_data = json.load(f)
-        report_text = json.dumps(report_data, indent=2)
-        logger.info(f"Report loaded from {filename}.")
-        return report_text
+            return json.dumps(report_data, indent=2)
+    except json.JSONDecodeError:
+        raise ValueError(f"Invalid JSON in file: {filename}")
     except Exception as e:
-        raise RuntimeError(f"Error loading report from {filename}: {str(e)}")
+        raise ValueError(f"Error loading report: {str(e)}")
 
 # -----------------------------------------------------------------------------
 # Function: save_response
 # -----------------------------------------------------------------------------
-def save_response(response_data: Dict[str, Any], output_filename: str) -> None:
+def save_response(response_data: dict, filename: str) -> None:
     """
-    Saves the OpenAI response to a JSON file.
+    Save a response to a JSON file.
     
     Args:
-        response_data (Dict[str, Any]): The JSON data to save.
-        output_filename (str): The filename to save the response.
+        response_data (dict): The response data to save
+        filename (str): The name of the file to save to
     """
     try:
-        with open(output_filename, "w", encoding="utf-8") as f:
-            json.dump(response_data, f, indent=4)
-        logger.info(f"Response saved to {output_filename}")
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(response_data, f, indent=2, ensure_ascii=False)
+        logger.info(f"Response saved to {filename}")
     except Exception as e:
-        raise RuntimeError(f"Failed to save response: {e}")
+        logger.error(f"Error saving response to JSON: {e}")
+        raise

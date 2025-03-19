@@ -1,30 +1,35 @@
 from fastapi import APIRouter, HTTPException
-from app.services.openaiProcessor import (
-    gather_scraped_content, 
-    build_report_prompt, 
-    send_prompt_to_openai, 
-    parse_into_pydantic
-)
+from app.models.reportGenerationModels import ReportGenerationRequest, ReportGenerationResponse
+from app.services.openaiProcessor import send_prompt_to_openai, parse_into_pydantic
+from app.prompts.report_prompts import get_report_prompt
+from app.utils.firecrawlApp import load_scraped_website_content
 
 router = APIRouter()
 
 @router.get("/generate-report")
 def generate_report_endpoint():
+    """
+    Endpoint to generate a report from scraped content.
+    This endpoint automatically scrapes content and generates a report.
+    """
     try:
-        # Step 1: Gather scraped website content (limit to 3 pages, or adjust as needed)
-        pages_text = gather_scraped_content(max_pages=3)
+        # Step 1: Gather scraped website content (limit to 3 pages)
+        pages_content = load_scraped_website_content(max_pages=3)
+        if not pages_content:
+            raise ValueError("No pages found to process.")
+        pages_text = "\n\n---PAGE BREAK---\n\n".join(pages_content)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error gathering scraped content: {e}")
     
     try:
         # Step 2: Build the report prompt using the scraped content
-        system_prompt, user_prompt = build_report_prompt(pages_text)
+        prompt = get_report_prompt(pages_text)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error building the prompt: {e}")
     
     try:
         # Step 3: Send the prompt to Azure OpenAI and receive raw JSON output
-        raw_json = send_prompt_to_openai(user_prompt)
+        raw_json = send_prompt_to_openai(prompt)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error from OpenAI: {e}")
     
@@ -35,3 +40,21 @@ def generate_report_endpoint():
         raise HTTPException(status_code=500, detail=f"Error parsing report JSON: {e}")
     
     return report_model.dict()
+
+@router.post("/generate-report", response_model=ReportGenerationResponse)
+def generate_report_from_text(request: ReportGenerationRequest):
+    """
+    Endpoint to generate a business report using OpenAI.
+    It builds a prompt with the provided text content and then 
+    calls the Azure OpenAI API to generate a report in JSON format.
+    """
+    try:
+        # Build the prompt from provided text content
+        prompt = get_report_prompt(request.pages_text)
+        
+        # Send the prompt to Azure OpenAI and get structured output
+        report_data = send_prompt_to_openai(prompt, max_retries=request.retries)
+        
+        return ReportGenerationResponse(report=report_data)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

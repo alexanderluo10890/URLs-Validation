@@ -81,5 +81,4 @@ def check_redirection(url: str):
     except requests.exceptions.ConnectionError:
         raise HTTPException(status_code=400, detail="Failed to connect to the URL. Check if the URL is reachable.")
     except requests.exceptions.RequestException as e:
-        raise HTTPException(status_code=400, detail=f"Error reaching the URL: {str(e)}")
-    
+        raise HTTPException(status_code=400, detail=f"Error reaching the URL: {str(e)}") 

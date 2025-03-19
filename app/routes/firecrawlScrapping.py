@@ -1,42 +1,52 @@
 from fastapi import APIRouter, HTTPException
-import os
-from urllib.parse import urlparse
-from app.services.openaiProcessor import validate_url 
-from app.utils.firecrawlApp import crawl_website, load_scraped_website_content  
-from app.models.firecrawlScrappingModels import FirecrawlScrapeRequest, FirecrawlScrapeResponse
+from pydantic import BaseModel
+from typing import Optional
+from app.utils.validators import is_valid_url
+from app.utils.firecrawlApp import crawl_website, load_scraped_website_content
 
 router = APIRouter()
 
-@router.post("/", response_model=FirecrawlScrapeResponse)
-def firecrawl_scrape(request: FirecrawlScrapeRequest):
+class WebsiteRequest(BaseModel):
+    """Request model for website scraping."""
+    url: str
+    max_pages: Optional[int] = None
+    force_crawl: bool = False
+
+@router.post("/scrape")
+def scrape_website(request: WebsiteRequest):
     """
-    Endpoint to perform website scraping using Firecrawl.
-    Validates the URL, triggers a crawl if needed, and returns the scraped content.
+    Endpoint to scrape a website.
     """
     try:
-        # Validate URL using helper from openaiProcessor.py
-        if not validate_url(str(request.url)):
-            raise HTTPException(status_code=400, detail="Invalid URL format.")
+        # Validate URL
+        is_valid, error_msg = is_valid_url(request.url)
+        if not is_valid:
+            raise ValueError(f"Invalid URL: {error_msg}")
         
-        # Generate a filename based on the URL's domain
-        parsed = urlparse(str(request.url))
-        domain = parsed.netloc
-        if domain.startswith("www."):
-            domain = domain[4:]
-        domain_filename = domain.replace(".", "_")
-        filename = f"{domain_filename}_scraped_data.json"
+        # Crawl the website
+        filename, pages = crawl_website(request.url, page_limit=request.max_pages or 3)
         
-        # If force_crawl is True or the file doesn't exist, perform a crawl
-        if request.force_crawl or not os.path.exists(filename):
-            scraped_filename, _ = crawl_website(str(request.url), page_limit=request.max_pages) 
-            filename = scraped_filename
+        return {
+            "message": "Website scraped successfully",
+            "filename": filename,
+            "pages_scraped": len(pages)
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/load")
+def load_scraped_content(max_pages: Optional[int] = None):
+    """
+    Endpoint to load scraped content.
+    """
+    try:
+        pages_content = load_scraped_website_content(max_pages=max_pages or 3)
+        if not pages_content:
+            raise ValueError("No pages found to process.")
         
-        # Load scraped content from the generated file
-        pages = load_scraped_website_content(filename=filename, max_pages=request.max_pages)  
-        if not pages:
-            raise HTTPException(status_code=404, detail="No pages found to scrape.")
-        
-        scraped_content = "\n\n---PAGE BREAK---\n\n".join(pages)
-        return FirecrawlScrapeResponse(scraped_content=scraped_content, source_file=filename)
+        return {
+            "pages": pages_content,
+            "total_pages": len(pages_content)
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
