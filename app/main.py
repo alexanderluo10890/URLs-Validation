@@ -9,18 +9,22 @@ from typing import Optional
 from app.services.openaiProcessor import send_prompt_to_openai, parse_into_pydantic
 from app.services.verticalMarketProcessor import load_report, save_response
 from app.utils.firecrawlApp import crawl_website, load_scraped_website_content
-from app.utils.validators import is_valid_url
+from app.utils.validators import validate_url as validate_url_util
 from app.prompts.report_prompts import get_report_prompt
 from app.prompts.vertical_market_prompts import get_vertical_market_prompt
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 from app.routes.reports import router as reports_router
 from app.routes.firecrawlScrapping import router as firecrawl_scrapping_router
+from app.routes.buildReport import router as build_report_router
+from app.routes.verticalMarketCheckerRouter import router as vertical_market_checker_router
+import uvicorn
 
 # -----------------------------------------------------------------------------
 # Logging Setup
 # -----------------------------------------------------------------------------
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,  # Changed to DEBUG for more detailed logging
     format='%(asctime)s [%(levelname)s] %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
@@ -36,10 +40,53 @@ app = FastAPI(
 )
 
 # -----------------------------------------------------------------------------
+# CORS Configuration
+# -----------------------------------------------------------------------------
+origins = [
+    "http://localhost",
+    "http://localhost:3000",  # React default port
+    "http://localhost:5173",  # Vite default port
+    "http://localhost:8000",  # FastAPI default port
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:5173",  # Vite default port
+    "http://127.0.0.1:8000",
+]
+
+logger.info(f"Configuring CORS with allowed origins: {origins}")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=3600,  # Cache preflight requests for 1 hour
+)
+
+# -----------------------------------------------------------------------------
+# Request Logging Middleware
+# -----------------------------------------------------------------------------
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    logger.debug(f"Request: {request.method} {request.url}")
+    logger.debug(f"Headers: {dict(request.headers)}")
+    logger.debug(f"Origin: {request.headers.get('origin')}")
+    
+    response = await call_next(request)
+    
+    logger.debug(f"Response status: {response.status_code}")
+    logger.debug(f"Response headers: {dict(response.headers)}")
+    return response
+
+# -----------------------------------------------------------------------------
 # Register Routers
 # -----------------------------------------------------------------------------
-app.include_router(reports_router, prefix="/api")
-app.include_router(firecrawl_scrapping_router, prefix="/api/scrape")
+logger.info("Registering API routers...")
+app.include_router(reports_router, prefix="/api/reports", tags=["Reports"])
+app.include_router(firecrawl_scrapping_router, prefix="/api/scrape", tags=["Firecrawl Scraping"])
+app.include_router(build_report_router, prefix="/api/report", tags=["Report Generation"])
+app.include_router(vertical_market_checker_router, prefix="/api/vertical-market-check", tags=["Vertical Market Check"])
 
 def validate_url(url: str) -> bool:
     """
@@ -51,7 +98,7 @@ def validate_url(url: str) -> bool:
     Returns:
         bool: True if the URL is valid, False otherwise
     """
-    is_valid, _ = is_valid_url(url)
+    is_valid, _ = validate_url_util(url)
     return is_valid
 
 def gather_scraped_content(url: Optional[str] = None, max_pages: Optional[int] = None, force_crawl: bool = False) -> str:
@@ -177,43 +224,35 @@ def analyze_vertical_market(report_file: str, output_file: str, retries: int = 3
 
 def main():
     """
-    Main entry point for the CLI application.
+    Main entry point for the application.
     """
-    parser = argparse.ArgumentParser(
-        description="Business Website Analysis Tools"
-    )
-    subparsers = parser.add_subparsers(dest="command", help="Available commands")
-    
-    # Vertical Market Analysis command
-    vertical_parser = subparsers.add_parser(
-        "analyze-vertical",
-        help="Analyze a business report and check if the company is a vertical market software company"
-    )
-    vertical_parser.add_argument(
-        "--report",
-        type=str,
-        default="final_website_report.json",
-        help="Path to the final website report JSON file"
-    )
-    vertical_parser.add_argument(
-        "--output",
-        type=str,
-        default="vertical_market_analysis.json",
-        help="Output filename for the response"
-    )
-    vertical_parser.add_argument(
-        "--retries",
-        type=int,
-        default=3,
-        help="Number of retries for OpenAI API calls"
-    )
-    
+    parser = argparse.ArgumentParser(description="Business Website Analysis Tool")
+    parser.add_argument("--mode", choices=["api", "cli"], default="api", help="Run mode: api (FastAPI server) or cli (command line)")
+    parser.add_argument("--url", type=str, help="URL to analyze (for CLI mode)")
+    parser.add_argument("--max-pages", type=int, default=3, help="Maximum number of pages to process")
+    parser.add_argument("--force-crawl", action="store_true", help="Force a new crawl even if data exists")
+    parser.add_argument("--report", type=str, default="final_website_report.json", help="Path to the report file")
+    parser.add_argument("--output", type=str, default="vertical_market_check_response.json", help="Output filename for the response")
+    parser.add_argument("--retries", type=int, default=3, help="Number of retries for OpenAI API calls")
+    parser.add_argument("--host", type=str, default="0.0.0.0", help="Host to run the API server on")
+    parser.add_argument("--port", type=int, default=8000, help="Port to run the API server on")
     args = parser.parse_args()
     
-    if args.command == "analyze-vertical":
-        analyze_vertical_market(args.report, args.output, args.retries)
+    if args.mode == "api":
+        logger.info(f"Starting API server on {args.host}:{args.port}")
+        uvicorn.run(app, host=args.host, port=args.port)
     else:
-        parser.print_help()
+        if not args.url:
+            logger.error("URL is required for CLI mode")
+            return
+        
+        try:
+            generate_website_report(args.url, args.max_pages, args.force_crawl)
+            analyze_vertical_market(args.report, args.output, args.retries)
+            logger.info("Process completed successfully!")
+        except Exception as e:
+            logger.error(f"Error during processing: {e}")
+            return
 
 if __name__ == "__main__":
     main()

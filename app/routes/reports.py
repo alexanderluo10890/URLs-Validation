@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from app.models.reportGenerationModels import ReportGenerationRequest, ReportGenerationResponse
-from app.services.openaiProcessor import send_prompt_to_openai, parse_into_pydantic
+from app.services.openaiProcessor2 import send_prompt_to_openai, parse_into_pydantic
 from app.prompts.report_prompts import get_report_prompt
-from app.utils.firecrawlApp import load_scraped_website_content
+from app.utils.firecrawlApp import gather_scraped_content
 
 router = APIRouter()
 
@@ -14,7 +14,7 @@ def generate_report_endpoint():
     """
     try:
         # Step 1: Gather scraped website content (limit to 3 pages)
-        pages_content = load_scraped_website_content(max_pages=3)
+        pages_content = gather_scraped_content(max_pages=3)
         if not pages_content:
             raise ValueError("No pages found to process.")
         pages_text = "\n\n---PAGE BREAK---\n\n".join(pages_content)

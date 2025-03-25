@@ -1,6 +1,6 @@
 from pydantic import HttpUrl
 from app.models.url_validation import URLValidationResponse
-from app.utils.validators import is_valid_url, check_redirection
+from app.utils.validators import validate_url, check_redirection
 import logging
 
 # Logger setup for error handling
@@ -11,7 +11,7 @@ if not logger.hasHandlers():
     logger.addHandler(handler)
 logger.setLevel(logging.ERROR)
 
-def validate_url(url: HttpUrl) -> URLValidationResponse:
+def is_valid_url(url: HttpUrl) -> URLValidationResponse:
     """
     Validate a URL and determine its status.
     Handles validation and redirection checks.
@@ -27,7 +27,7 @@ def validate_url(url: HttpUrl) -> URLValidationResponse:
         url_str = str(url)
         
         # Step 1: Validate the URL format
-        is_valid, message = is_valid_url(url_str)
+        is_valid, message = validate_url(url_str)
         if not is_valid:
             return URLValidationResponse(
                 original_url=url_str,

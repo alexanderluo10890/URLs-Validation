@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "markdown": "# Example Domain\n\nThis domain is for use in illustrative examples in documents. You may use this\ndomain in literature without prior coordination or asking for permission.\n\n[More information...](https://www.iana.org/domains/example)",
+            "metadata": {
+                "url": "https://example.com/",
+                "title": "Example Domain",
+                "scrapeId": "da5c9d3c-507c-4feb-a8e8-072d77a305d3",
+                "viewport": "width=device-width, initial-scale=1",
+                "sourceURL": "https://example.com",
+                "statusCode": 200
+            }
+        }
+    ],
+    "duplicates": []
+}
