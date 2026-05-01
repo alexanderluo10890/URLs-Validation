@@ -1,34 +1,66 @@
-# VMS Backend — Vertical Market Software Analyzer
+# VMS Analyzer — AI-Powered Company Classification Pipeline
 
-A FastAPI backend that automatically determines whether a company is a **vertical market software company** by scraping their website and analyzing it with AI.
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=flat&logo=fastapi&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini%20%7C%20o3--mini-412991?style=flat&logo=openai&logoColor=white)
+![Firecrawl](https://img.shields.io/badge/Firecrawl-Web%20Scraping-FF6B35?style=flat)
+![Pydantic](https://img.shields.io/badge/Pydantic-v2-E92063?style=flat&logo=pydantic&logoColor=white)
+
+> Given any company URL, this pipeline scrapes their website, generates a structured business report, and uses a reasoning AI model to determine whether the company is a **Vertical Market Software (VMS)** company — fully automated, end-to-end.
 
 ---
 
-## How It Works
+## What Is This?
 
-The pipeline runs in 3 steps:
+Vertical Market Software companies build software for a single, specific industry (e.g. software exclusively for dental clinics, or exclusively for auto dealerships). Identifying them manually is time-consuming and inconsistent.
+
+This project automates that process. You give it a URL. It gives you a `true` or `false` verdict — with reasoning.
+
+It was built as the backend intelligence layer for a larger VMS research and investment tool.
+
+---
+
+## Live Pipeline
 
 ```
-URL → Scrape (Firecrawl) → Business Report (gpt-4o-mini) → Vertical Market Check (o3-mini)
+URL Input
+   │
+   ▼
+Firecrawl (scrape + clean website content)
+   │
+   ▼
+GPT-4o-mini (generate structured JSON business report)
+   │
+   ▼
+o3-mini reasoning model (classify: is this a VMS company?)
+   │
+   ▼
+{ "final_answer": true, "reasoning": "..." }
 ```
 
-1. **Scrape** — Crawls the company website using Firecrawl, cleans the content (removes images, dropdowns, noise)
-2. **Report** — Sends cleaned content to `gpt-4o-mini` and generates a structured JSON business report
-3. **Classify** — Sends the report to `o3-mini` (reasoning model) which returns a `true/false` verdict with detailed reasoning
+---
+
+## Key Features
+
+- **Multi-page scraping** — crawls up to N pages per domain, deduplicates content, and strips noise (images, nav, dropdowns)
+- **Structured AI reports** — GPT-4o-mini produces a consistent JSON schema covering business model, products, target market, pricing, and team
+- **Reasoning-based classification** — o3-mini evaluates the report and returns a verdict with a full explanation, not just a label
+- **Caching** — scraped content is saved locally so re-runs skip the crawl step unless `--force-crawl` is passed
+- **Dual-mode** — runs as a REST API (for the frontend) or a CLI tool (for quick local analysis)
+- **Output files** — every run saves deduplicated data, the business report, and the classification result to `output/{domain}/`
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | FastAPI |
-| AI — Report Generation | OpenAI `gpt-4o-mini` |
-| AI — Classification | OpenAI `o3-mini` |
-| Web Scraping | Firecrawl API |
-| Data Validation | Pydantic v2 |
-| Environment | python-dotenv |
-| Server | Uvicorn |
+| Layer | Tool | Why |
+|---|---|---|
+| API Framework | FastAPI | Async, fast, auto-generates /docs |
+| Report Generation | OpenAI `gpt-4o-mini` | Cost-efficient, structured output |
+| Classification | OpenAI `o3-mini` | Reasoning model — explains its verdict |
+| Web Scraping | Firecrawl API | Handles JS-heavy sites, returns clean markdown |
+| Data Validation | Pydantic v2 | Strict schema enforcement across all I/O |
+| Environment | python-dotenv | Clean secret management |
 
 ---
 
@@ -40,39 +72,39 @@ URLs-Validation/
 │   ├── main.py                            # FastAPI app + CLI entry point
 │   ├── services/
 │   │   ├── openaiProcessor.py             # Report generation (gpt-4o-mini)
-│   │   └── verticalMarketProcessor.py     # Vertical market check (o3-mini)
+│   │   └── verticalMarketProcessor.py     # VMS classification (o3-mini)
 │   ├── routes/
 │   │   ├── firecrawlScrapping.py          # POST /api/scrape/scrape
 │   │   ├── buildReport.py                 # POST /api/report/generate-report
-│   │   └── verticalMarketCheckerRouter.py # POST /api/vertical-market-check/vertical-market-check
+│   │   └── verticalMarketCheckerRouter.py # POST /api/vertical-market-check/...
 │   ├── prompts/
-│   │   ├── report_prompts.py              # Prompts for report generation
-│   │   └── vertical_market_prompts.py     # Prompts for classification
+│   │   ├── report_prompts.py              # Prompts for business report generation
+│   │   └── vertical_market_prompts.py     # Prompts for VMS classification
 │   ├── models/
 │   │   ├── reportsModels.py               # Pydantic report schema
-│   │   └── url_validation.py              # URL validation models
+│   │   └── url_validation.py              # URL input validation
 │   └── utils/
-│       ├── firecrawlApp.py                # Firecrawl scraping + content cleaning
+│       ├── firecrawlApp.py                # Scraping + content cleaning logic
 │       ├── validators.py                  # URL format + redirect validation
 │       └── file_operations.py             # File read/write utilities
 ├── tests/
 │   ├── conftest.py
 │   └── unit/
-├── output/                                # Auto-created — one folder per company
+├── output/                                # Auto-created — one folder per domain
 │   └── {domain}/
 │       ├── deduplicated_data.json
 │       ├── report.json
 │       └── vertical_market_check.json
 ├── openai_tester.py                       # Quick API key verification script
-├── .env                                   # Secret keys (never committed)
+├── .env                                   # API keys (never committed)
 └── requirements.txt
 ```
 
 ---
 
-## Setup
+## Getting Started
 
-### 1. Clone and install dependencies
+### 1. Clone and install
 
 ```bash
 git clone https://github.com/alexanderluo10890/URLs-Validation.git
@@ -83,19 +115,18 @@ source .venv/bin/activate     # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### 2. Configure environment variables
+### 2. Add your API keys
 
-Create a `.env` file in the project root:
+Create a `.env` file in the root:
 
 ```
 OPENAI_API_KEY=sk-your-openai-key
 FIRECRAWL_API_KEY=fc-your-firecrawl-key
 ```
 
-- Get your OpenAI API key at **platform.openai.com**
-- Get your Firecrawl API key at **firecrawl.dev**
+Get keys at: [platform.openai.com](https://platform.openai.com) · [firecrawl.dev](https://firecrawl.dev)
 
-### 3. Verify your OpenAI key
+### 3. Verify setup
 
 ```bash
 python openai_tester.py
@@ -105,15 +136,15 @@ python openai_tester.py
 
 ## Running the App
 
-### API Mode (for frontend)
+### API mode (connects to the frontend)
 
 ```bash
 python -m app.main --mode api
 ```
 
-Server starts at `http://localhost:8000`. Interactive docs at `http://localhost:8000/docs`.
+Runs at `http://localhost:8000` — interactive docs at `/docs`.
 
-### CLI Mode (terminal pipeline)
+### CLI mode (run directly from terminal)
 
 ```bash
 python -m app.main --mode cli --url https://www.example.com
@@ -121,19 +152,17 @@ python -m app.main --mode cli --url https://www.example.com
 
 | Flag | Default | Description |
 |---|---|---|
-| `--url` | required | Company website URL |
+| `--url` | required | Company website to analyze |
 | `--max-pages` | 3 | Number of pages to crawl |
 | `--force-crawl` | false | Re-crawl even if cached data exists |
-| `--retries` | 3 | OpenAI API retry attempts |
-
-Output is saved to `output/{domain}/`.
+| `--retries` | 3 | OpenAI retry attempts on failure |
 
 ---
 
 ## API Endpoints
 
 ### `POST /api/scrape/scrape`
-Crawl a website and return cleaned text content.
+Scrape a website and return cleaned content.
 
 ```json
 // Request
@@ -143,15 +172,10 @@ Crawl a website and return cleaned text content.
 { "message": "Content loaded successfully", "content": "..." }
 ```
 
----
-
 ### `POST /api/report/generate-report`
-Generate a structured business report from scraped content.
+Generate a structured JSON business report from scraped text.
 
 ```json
-// Request
-{ "pages_text": "...", "retries": 3, "url": "https://www.example.com" }
-
 // Response
 {
   "report": {
@@ -165,25 +189,29 @@ Generate a structured business report from scraped content.
 }
 ```
 
----
-
 ### `POST /api/vertical-market-check/vertical-market-check`
-Determine if a company is a vertical market software company.
+Classify whether a company is a VMS company.
 
 ```json
-// Request
-{ "report_text": "...", "retries": 3, "url": "https://www.example.com" }
-
 // Response
 {
-  "reasoning": "The company develops software specifically for the hospitality industry...",
+  "reasoning": "The company develops software exclusively for the hospitality industry...",
   "final_answer": true
 }
 ```
 
 ---
 
-## Running Tests
+## What I Learned
+
+- **Prompt engineering for structured output** — getting GPT-4o-mini to return consistent, deeply nested JSON required careful schema design and iterative prompt tuning
+- **Reasoning models behave differently** — o3-mini doesn't respond well to over-constrained prompts; giving it room to reason and then extracting the verdict produced far better results than asking for a direct answer
+- **Web scraping is messy** — real company sites are noisy; building a cleaning layer on top of Firecrawl's output (deduplication, stripping irrelevant sections) significantly improved AI output quality
+- **Caching matters in AI pipelines** — scraping and inference are both slow and costly; saving intermediate outputs made iteration 10x faster during development
+
+---
+
+## Tests
 
 ```bash
 pytest tests/
@@ -191,12 +219,12 @@ pytest tests/
 
 ---
 
-## Output Files
+## Output
 
-Every analysis creates a folder at `output/{domain}/`:
+Every run saves three files to `output/{domain}/`:
 
-| File | Description |
+| File | Contents |
 |---|---|
-| `deduplicated_data.json` | Cleaned scraped page content from Firecrawl |
-| `report.json` | Structured business report from gpt-4o-mini |
-| `vertical_market_check.json` | Classification result from o3-mini |
+| `deduplicated_data.json` | Cleaned scraped content |
+| `report.json` | Structured business report from GPT-4o-mini |
+| `vertical_market_check.json` | VMS verdict + reasoning from o3-mini |
