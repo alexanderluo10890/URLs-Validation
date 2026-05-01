@@ -47,8 +47,9 @@ def clean_scraped_text(text: str) -> str:
     text = re.sub(r'!\[.*?\]\(.*?\)', '', text)         # remove image markdown
     text = re.sub(r'\[.*?\]\(https?://\S+\)', '', text) # remove hyperlinks
     text = re.sub(r'https?://\S+', '', text)            # remove bare URLs
-    # remove lines containing flag emojis (country dropdown entries)
-    text = re.sub(r'^.*[\U0001F1E0-\U0001F1FF].*$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^.*[\U0001F1E0-\U0001F1FF].*$', '', text, flags=re.MULTILINE)  # remove flag emoji lines
+    # remove long runs of short list items (country name dropdowns, etc.)
+    text = re.sub(r'(^- [^\n]{1,40}\n){10,}', '', text, flags=re.MULTILINE)
     text = re.sub(r'\n{3,}', '\n\n', text)              # collapse blank lines
     return text.strip()
 
