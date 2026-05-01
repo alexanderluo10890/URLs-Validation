@@ -1,5 +1,5 @@
 import pytest
-from app.services.validators import is_valid_url, check_redirection
+from app.utils.validators import validate_url as is_valid_url, check_redirection
 from urllib.parse import urlparse
 from fastapi import HTTPException
 from app.utils.file_operations import load_links

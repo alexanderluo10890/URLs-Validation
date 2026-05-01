@@ -5,16 +5,17 @@ Main entry point for the application that connects all the functionality.
 import argparse
 import json
 import logging
+import os
 from typing import Optional
+from urllib.parse import urlparse
 from app.services.openaiProcessor import send_prompt_to_openai, parse_into_pydantic
-from app.services.verticalMarketProcessor import load_report, save_response
+from app.services.verticalMarketProcessor import load_report, save_response, send_prompt_to_openai as send_vm_prompt
 from app.utils.firecrawlApp import crawl_website, load_scraped_website_content
 from app.utils.validators import validate_url as validate_url_util
 from app.prompts.report_prompts import get_report_prompt
 from app.prompts.vertical_market_prompts import get_vertical_market_prompt
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes.reports import router as reports_router
 from app.routes.firecrawlScrapping import router as firecrawl_scrapping_router
 from app.routes.buildReport import router as build_report_router
 from app.routes.verticalMarketCheckerRouter import router as vertical_market_checker_router
@@ -58,8 +59,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allow all methods
+    allow_headers=["*"],  # Allow all headers
     expose_headers=["*"],
     max_age=3600,  # Cache preflight requests for 1 hour
 )
@@ -83,7 +84,6 @@ async def log_requests(request: Request, call_next):
 # Register Routers
 # -----------------------------------------------------------------------------
 logger.info("Registering API routers...")
-app.include_router(reports_router, prefix="/api/reports", tags=["Reports"])
 app.include_router(firecrawl_scrapping_router, prefix="/api/scrape", tags=["Firecrawl Scraping"])
 app.include_router(build_report_router, prefix="/api/report", tags=["Report Generation"])
 app.include_router(vertical_market_checker_router, prefix="/api/vertical-market-check", tags=["Vertical Market Check"])
@@ -101,45 +101,33 @@ def validate_url(url: str) -> bool:
     is_valid, _ = validate_url_util(url)
     return is_valid
 
-def gather_scraped_content(url: Optional[str] = None, max_pages: Optional[int] = None, force_crawl: bool = False) -> str:
-    """
-    Loads the scraped website content and returns a single string containing the content of the pages.
-    
-    Args:
-        url (Optional[str], optional): URL to crawl if provided. Defaults to None.
-        max_pages (Optional[int], optional): Maximum number of pages to process. Defaults to None.
-        force_crawl (bool, optional): Force a new crawl even if data exists. Defaults to False.
-    
-    Returns:
-        str: Joined text content from all scraped pages
-        
-    Raises:
-        ValueError: If the URL is invalid or no pages are found to process
-        RuntimeError: If there's an error during crawling
-    """
-    if url:
-        # Validate URL
-        if not validate_url(url):
-            raise ValueError(f"Invalid URL format: {url}")
-        
-        # Check if we need to crawl the website
-        if force_crawl:
-            logger.info(f"Crawling website: {url}")
-            try:
-                scraped_filename, _ = crawl_website(url, page_limit=max_pages or 3)
-            except Exception as e:
-                raise RuntimeError(f"Failed to crawl website {url}: {str(e)}")
-    
-    # Load the content from the file
+def get_output_dir(url: str) -> str:
+    netloc = urlparse(url).netloc
+    domain = (netloc[4:] if netloc.startswith('www.') else netloc).replace('.', '_')
+    output_dir = os.path.join("output", domain)
+    os.makedirs(output_dir, exist_ok=True)
+    return output_dir
+
+def gather_scraped_content(url: str, max_pages: Optional[int] = None, force_crawl: bool = False, output_dir: str = ".") -> str:
+    if not validate_url(url):
+        raise ValueError(f"Invalid URL format: {url}")
+
+    deduplicated_file = os.path.join(output_dir, "deduplicated_data.json")
+
+    if force_crawl or not os.path.exists(deduplicated_file):
+        logger.info(f"Crawling website: {url}")
+        try:
+            crawl_website(url, page_limit=max_pages or 3, output_dir=output_dir)
+        except Exception as e:
+            raise RuntimeError(f"Failed to crawl website {url}: {str(e)}")
+
     try:
-        pages_content = load_scraped_website_content(max_pages=int(max_pages or 3))
+        pages_content = load_scraped_website_content(filename=deduplicated_file, max_pages=int(max_pages or 3))
         if not pages_content:
             raise ValueError("No pages found to process.")
-        
-        joined_text = "\n\n---PAGE BREAK---\n\n".join(pages_content)
-        return joined_text
+        return "\n\n---PAGE BREAK---\n\n".join(pages_content)
     except FileNotFoundError:
-        raise ValueError("No scraped data found. Please make sure the website has been crawled.")
+        raise ValueError("No scraped data found. Please crawl the website first.")
     except Exception as e:
         raise RuntimeError(f"Error loading content: {str(e)}")
 
@@ -159,31 +147,13 @@ def save_report_to_json(report_model, filename: str = "final_website_report.json
         logger.error(f"Error saving report to JSON: {e}")
         raise
 
-def generate_website_report(url: str, max_pages: Optional[int] = None, force_crawl: bool = False) -> None:
-    """
-    Generate a business report from a website.
-    
-    Args:
-        url (str): The URL of the website to analyze
-        max_pages (Optional[int]): Maximum number of pages to process
-        force_crawl (bool): Whether to force a new crawl
-    """
+def generate_website_report(url: str, max_pages: Optional[int] = None, force_crawl: bool = False, output_dir: str = ".") -> None:
     try:
-        # Gather content from the website
-        content = gather_scraped_content(url, max_pages, force_crawl)
-        
-        # Get the report prompt
+        content = gather_scraped_content(url, max_pages, force_crawl, output_dir)
         prompt = get_report_prompt(content)
-        
-        # Send to OpenAI and get response
         data_dict = send_prompt_to_openai(prompt)
-        
-        # Parse into Pydantic model
         report_model = parse_into_pydantic(data_dict)
-        
-        # Save the report
-        save_report_to_json(report_model)
-        
+        save_report_to_json(report_model, os.path.join(output_dir, "report.json"))
         logger.info("Report generation completed successfully")
     except Exception as e:
         logger.error(f"Error generating report: {e}")
@@ -212,7 +182,7 @@ def analyze_vertical_market(report_file: str, output_file: str, retries: int = 3
         
         # Send to OpenAI
         logger.info("Sending prompt to OpenAI (o3-mini)...")
-        response_data = send_prompt_to_openai(prompt, max_retries=retries)
+        response_data = send_vm_prompt(prompt, max_retries=retries)
         
         # Save the response
         logger.info("Saving response...")
@@ -247,9 +217,14 @@ def main():
             return
         
         try:
-            generate_website_report(args.url, args.max_pages, args.force_crawl)
-            analyze_vertical_market(args.report, args.output, args.retries)
-            logger.info("Process completed successfully!")
+            output_dir = get_output_dir(args.url)
+            generate_website_report(args.url, args.max_pages, args.force_crawl, output_dir)
+            analyze_vertical_market(
+                os.path.join(output_dir, "report.json"),
+                os.path.join(output_dir, "vertical_market_check.json"),
+                args.retries
+            )
+            logger.info(f"Process completed. Output saved to: {output_dir}/")
         except Exception as e:
             logger.error(f"Error during processing: {e}")
             return
